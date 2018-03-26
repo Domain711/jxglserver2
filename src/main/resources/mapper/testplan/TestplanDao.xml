@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.testplan.dao.TestplanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.testplan.entity.TestplanEntity" id="testplanMap">
+        <result property="id" column="id"/>
+        <result property="term" column="term"/>
+        <result property="collegenum" column="collegenum"/>
+        <result property="majornum" column="majornum"/>
+        <result property="gradenum" column="gradenum"/>
+        <result property="coursenum" column="coursenum"/>
+        <result property="starttime" column="starttime"/>
+        <result property="endtime" column="endtime"/>
+        <result property="addr" column="addr"/>
+        <result property="createtime" column="createtime"/>
+        <result property="createuser" column="createuser"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
+
+
+</mapper>
