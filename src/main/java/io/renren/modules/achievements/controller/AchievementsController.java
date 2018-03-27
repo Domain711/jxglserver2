@@ -1,8 +1,7 @@
-package io.renren.modules.college.controller;
+package io.renren.modules.achievements.controller;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import io.renren.modules.sys.controller.AbstractController;
@@ -14,33 +13,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.renren.modules.college.entity.CollegeEntity;
-import io.renren.modules.college.service.CollegeService;
+import io.renren.modules.achievements.entity.AchievementsEntity;
+import io.renren.modules.achievements.service.AchievementsService;
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.R;
 
 
 
 /**
- * 学院信息表
+ * 科研成果表
  *
  * @author 
  * @email 
- * @date 2018-03-25 18:37:44
+ * @date 2018-03-28 06:11:14
  */
 @RestController
-@RequestMapping("college/college")
-public class CollegeController extends AbstractController{
+@RequestMapping("achievements/achievements")
+public class AchievementsController extends AbstractController{
     @Autowired
-    private CollegeService collegeService;
+    private AchievementsService achievementsService;
 
     /**
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("college:college:list")
+    @RequiresPermissions("achievements:achievements:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = collegeService.queryPage(params);
+        PageUtils page = achievementsService.queryPage(params);
+
         return R.ok().put("page", page);
     }
 
@@ -49,22 +49,22 @@ public class CollegeController extends AbstractController{
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("college:college:info")
+    @RequiresPermissions("achievements:achievements:info")
     public R info(@PathVariable("id") Integer id){
-			CollegeEntity college = collegeService.selectById(id);
+			AchievementsEntity achievements = achievementsService.selectById(id);
 
-        return R.ok().put("college", college);
+        return R.ok().put("achievements", achievements);
     }
 
     /**
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("college:college:save")
-    public R save(@RequestBody CollegeEntity college){
-            college.setCreatetime(new Date());
-            college.setCreateuser(String.valueOf(getUser().getUsername()));
-			collegeService.insert(college);
+    @RequiresPermissions("achievements:achievements:save")
+    public R save(@RequestBody AchievementsEntity achievements){
+            achievements.setCreatetime(new Date());
+            achievements.setCreateuser(getUserId());
+			achievementsService.insert(achievements);
 
         return R.ok();
     }
@@ -73,9 +73,9 @@ public class CollegeController extends AbstractController{
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("college:college:update")
-    public R update(@RequestBody CollegeEntity college){
-			collegeService.updateById(college);
+    @RequiresPermissions("achievements:achievements:update")
+    public R update(@RequestBody AchievementsEntity achievements){
+			achievementsService.updateById(achievements);
 
         return R.ok();
     }
@@ -84,9 +84,9 @@ public class CollegeController extends AbstractController{
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("college:college:delete")
+    @RequiresPermissions("achievements:achievements:delete")
     public R delete(@RequestBody Integer[] ids){
-			collegeService.deleteBatchIds(Arrays.asList(ids));
+			achievementsService.deleteBatchIds(Arrays.asList(ids));
 
         return R.ok();
     }

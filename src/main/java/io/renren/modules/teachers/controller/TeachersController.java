@@ -1,8 +1,11 @@
 package io.renren.modules.teachers.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import io.renren.modules.sys.controller.AbstractController;
+import io.renren.modules.sys.service.SysUserRoleService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,9 +30,11 @@ import io.renren.common.utils.R;
  */
 @RestController
 @RequestMapping("teachers/teachers")
-public class TeachersController {
+public class TeachersController extends AbstractController{
     @Autowired
     private TeachersService teachersService;
+    @Autowired
+    private SysUserRoleService sysUserRoleService;
 
     /**
      * 列表
@@ -37,7 +42,10 @@ public class TeachersController {
     @RequestMapping("/list")
     @RequiresPermissions("teachers:teachers:list")
     public R list(@RequestParam Map<String, Object> params){
+        List<Long> roleIdList = sysUserRoleService.queryRoleIdList(getUserId());//获取拥有的角色
+        params.put("roleIdList",roleIdList);
         PageUtils page = teachersService.queryPage(params);
+
 
         return R.ok().put("page", page);
     }

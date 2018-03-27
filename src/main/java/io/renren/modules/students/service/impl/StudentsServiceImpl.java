@@ -1,5 +1,6 @@
 package io.renren.modules.students.service.impl;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
@@ -18,9 +19,10 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsDao, StudentsEntity
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        String studentnum = (String)params.get("studentnum");
         Page<StudentsEntity> page = this.selectPage(
                 new Query<StudentsEntity>(params).getPage(),
-                new EntityWrapper<StudentsEntity>()
+                new EntityWrapper<StudentsEntity>().eq(StringUtils.isNotBlank(studentnum),"studentnum",studentnum)
         );
 
         return new PageUtils(page);

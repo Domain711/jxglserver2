@@ -1,8 +1,7 @@
-package io.renren.modules.college.controller;
+package io.renren.modules.teachplan.controller;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import io.renren.modules.sys.controller.AbstractController;
@@ -14,33 +13,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.renren.modules.college.entity.CollegeEntity;
-import io.renren.modules.college.service.CollegeService;
+import io.renren.modules.teachplan.entity.TeachplanEntity;
+import io.renren.modules.teachplan.service.TeachplanService;
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.R;
 
 
 
 /**
- * 学院信息表
+ * 教案信息表
  *
  * @author 
  * @email 
- * @date 2018-03-25 18:37:44
+ * @date 2018-03-28 05:58:16
  */
 @RestController
-@RequestMapping("college/college")
-public class CollegeController extends AbstractController{
+@RequestMapping("teachplan/teachplan")
+public class TeachplanController extends AbstractController{
     @Autowired
-    private CollegeService collegeService;
+    private TeachplanService teachplanService;
 
     /**
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("college:college:list")
+    @RequiresPermissions("teachplan:teachplan:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = collegeService.queryPage(params);
+        PageUtils page = teachplanService.queryPage(params);
+
         return R.ok().put("page", page);
     }
 
@@ -49,22 +49,22 @@ public class CollegeController extends AbstractController{
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("college:college:info")
+    @RequiresPermissions("teachplan:teachplan:info")
     public R info(@PathVariable("id") Integer id){
-			CollegeEntity college = collegeService.selectById(id);
+			TeachplanEntity teachplan = teachplanService.selectById(id);
 
-        return R.ok().put("college", college);
+        return R.ok().put("teachplan", teachplan);
     }
 
     /**
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("college:college:save")
-    public R save(@RequestBody CollegeEntity college){
-            college.setCreatetime(new Date());
-            college.setCreateuser(String.valueOf(getUser().getUsername()));
-			collegeService.insert(college);
+    @RequiresPermissions("teachplan:teachplan:save")
+    public R save(@RequestBody TeachplanEntity teachplan){
+            teachplan.setCreatetime(new Date());
+            teachplan.setCreateuser(getUserId());
+			teachplanService.insert(teachplan);
 
         return R.ok();
     }
@@ -73,9 +73,9 @@ public class CollegeController extends AbstractController{
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("college:college:update")
-    public R update(@RequestBody CollegeEntity college){
-			collegeService.updateById(college);
+    @RequiresPermissions("teachplan:teachplan:update")
+    public R update(@RequestBody TeachplanEntity teachplan){
+			teachplanService.updateById(teachplan);
 
         return R.ok();
     }
@@ -84,9 +84,9 @@ public class CollegeController extends AbstractController{
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("college:college:delete")
+    @RequiresPermissions("teachplan:teachplan:delete")
     public R delete(@RequestBody Integer[] ids){
-			collegeService.deleteBatchIds(Arrays.asList(ids));
+			teachplanService.deleteBatchIds(Arrays.asList(ids));
 
         return R.ok();
     }
