@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.service.IService;
 import io.renren.common.utils.PageUtils;
 import io.renren.modules.college.entity.CollegeEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +17,10 @@ import java.util.Map;
 public interface CollegeService extends IService<CollegeEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    /**
+     * 获取所有学院列表
+     */
+    List<CollegeEntity> queryCollegeList();
 }
 

@@ -2,6 +2,8 @@ package io.renren.modules.college.service.impl;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -26,6 +28,11 @@ public class CollegeServiceImpl extends ServiceImpl<CollegeDao, CollegeEntity> i
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public List<CollegeEntity> queryCollegeList() {
+        return baseMapper.queryCollegeList();
     }
 
 }

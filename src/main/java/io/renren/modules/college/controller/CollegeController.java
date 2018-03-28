@@ -44,6 +44,15 @@ public class CollegeController extends AbstractController{
         return R.ok().put("page", page);
     }
 
+    /**
+     * 获取学院列表
+     */
+    @RequestMapping("/select")
+    @RequiresPermissions("college:college:select")
+    public R select(@RequestParam Map<String, Object> params){
+        List<CollegeEntity> collegeList = collegeService.queryCollegeList();
+        return R.ok().put("collegeList", collegeList);
+    }
 
     /**
      * 信息

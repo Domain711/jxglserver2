@@ -63,6 +63,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 	@Override
 	public List<SysMenuEntity> queryNotButtonList() {
 		return baseMapper.queryNotButtonList();
+
 	}
 
 	@Override

@@ -1,7 +1,10 @@
 package io.renren.modules.major.service.impl;
 
+import io.renren.modules.college.entity.CollegeEntity;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -27,5 +30,6 @@ public class MajorServiceImpl extends ServiceImpl<MajorDao, MajorEntity> impleme
 
         return new PageUtils(page);
     }
+
 
 }

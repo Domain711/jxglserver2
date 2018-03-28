@@ -4,6 +4,8 @@ import io.renren.modules.college.entity.CollegeEntity;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 学院信息表
  * 
@@ -13,5 +15,9 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface CollegeDao extends BaseMapper<CollegeEntity> {
-	
+    /**
+     * 获取所有学院信息
+     * @return
+     */
+    List<CollegeEntity> queryCollegeList();
 }

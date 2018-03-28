@@ -2,8 +2,10 @@ package io.renren.modules.major.controller;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
+import io.renren.modules.college.entity.CollegeEntity;
 import io.renren.modules.sys.controller.AbstractController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +57,8 @@ public class MajorController extends AbstractController{
 
         return R.ok().put("major", major);
     }
+
+
 
     /**
      * 保存
