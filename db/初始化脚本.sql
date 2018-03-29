@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-03-26 23:27:47
+Date: 2018-03-29 22:58:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -170,7 +170,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RenrenScheduler', 'DESKTOP-80Q30CP1522074722569', '1522077674469', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('RenrenScheduler', 'DESKTOP-80Q30CP1522330988449', '1522335183408', '15000');
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -385,7 +385,7 @@ CREATE TABLE `sys_log` (
   `ip` varchar(64) DEFAULT NULL COMMENT 'IP地址',
   `create_date` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8 COMMENT='系统日志';
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COMMENT='系统日志';
 
 -- ----------------------------
 -- Records of sys_log
@@ -500,6 +500,13 @@ INSERT INTO `sys_log` VALUES ('107', 'admin', '修改菜单', 'io.renren.modules
 INSERT INTO `sys_log` VALUES ('108', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":247,\"parentId\":149,\"name\":\"成绩查询\",\"url\":\"modules/exam/exam.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '25', '0:0:0:0:0:0:0:1', '2018-03-26 20:24:37');
 INSERT INTO `sys_log` VALUES ('109', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":252,\"parentId\":153,\"name\":\"成绩查询\",\"url\":\"modules/exam/exam.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '222', '0:0:0:0:0:0:0:1', '2018-03-26 20:26:18');
 INSERT INTO `sys_log` VALUES ('110', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":257,\"parentId\":153,\"name\":\"考试计划\",\"url\":\"modules/testplan/testplan.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '23', '0:0:0:0:0:0:0:1', '2018-03-26 20:26:57');
+INSERT INTO `sys_log` VALUES ('111', 'admin', '删除菜单', 'io.renren.modules.sys.controller.SysMenuController.delete()', '142', '76', '0:0:0:0:0:0:0:1', '2018-03-28 06:04:22');
+INSERT INTO `sys_log` VALUES ('112', 'admin', '删除菜单', 'io.renren.modules.sys.controller.SysMenuController.delete()', '143', '17', '0:0:0:0:0:0:0:1', '2018-03-28 06:04:28');
+INSERT INTO `sys_log` VALUES ('113', 'admin', '删除菜单', 'io.renren.modules.sys.controller.SysMenuController.delete()', '144', '13', '0:0:0:0:0:0:0:1', '2018-03-28 06:04:36');
+INSERT INTO `sys_log` VALUES ('114', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":262,\"parentId\":133,\"name\":\"教案上传\",\"url\":\"modules/teachplan/teachplan.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '22', '0:0:0:0:0:0:0:1', '2018-03-28 06:05:09');
+INSERT INTO `sys_log` VALUES ('115', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":267,\"parentId\":133,\"name\":\"教学计划\",\"url\":\"modules/lessonplan/lessonplan.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '41', '0:0:0:0:0:0:0:1', '2018-03-28 06:16:00');
+INSERT INTO `sys_log` VALUES ('116', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":272,\"parentId\":133,\"name\":\"科研成果\",\"url\":\"modules/achievements/achievements.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '16', '0:0:0:0:0:0:0:1', '2018-03-28 06:16:27');
+INSERT INTO `sys_log` VALUES ('117', 'admin', '修改用户', 'io.renren.modules.sys.controller.SysUserController.update()', '{\"userId\":4,\"username\":\"student\",\"salt\":\"FxmiopsCJ82OEBQhj3E9\",\"email\":\"135467823@qq.com\",\"mobile\":\"13645368415\",\"status\":0,\"roleIdList\":[4],\"createUserId\":1}', '240', '0:0:0:0:0:0:0:1', '2018-03-29 22:25:21');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -515,7 +522,7 @@ CREATE TABLE `sys_menu` (
   `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
   `order_num` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=262 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
+) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -553,6 +560,7 @@ INSERT INTO `sys_menu` VALUES ('72', '136', '教师管理', 'modules/teachers/te
 INSERT INTO `sys_menu` VALUES ('74', '72', '新增', null, 'teachers:teachers:save', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('75', '72', '修改', null, 'teachers:teachers:update', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('76', '72', '删除', null, 'teachers:teachers:delete', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('77', '72', '查询', null, 'teachers:teachers:list', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('92', '132', '学院管理', 'modules/college/college.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('93', '92', '查看', null, 'college:college:list,college:college:info', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('94', '92', '新增', null, 'college:college:save', '2', null, '6');
@@ -565,18 +573,18 @@ INSERT INTO `sys_menu` VALUES ('100', '97', '修改', null, 'course:course:updat
 INSERT INTO `sys_menu` VALUES ('101', '97', '删除', null, 'course:course:delete', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('102', '132', '专业管理', 'modules/major/major.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('103', '102', '查看', null, 'major:major:list,major:major:info', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('104', '102', '新增', null, 'major:major:save', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('105', '102', '修改', null, 'major:major:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('104', '102', '新增', null, 'major:major:save,college:college:select', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('105', '102', '修改', null, 'major:major:update,college:college:select', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('106', '102', '删除', null, 'major:major:delete', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('107', '132', '班级管理', 'modules/grade/grade.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('108', '107', '查看', null, 'grade:grade:list,grade:grade:info', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('109', '107', '新增', null, 'grade:grade:save', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('110', '107', '修改', null, 'grade:grade:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('109', '107', '新增', null, 'grade:grade:save,major:major:select', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('110', '107', '修改', null, 'grade:grade:update,major:major:select', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('111', '107', '删除', null, 'grade:grade:delete', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('112', '140', '学生成绩管理', 'modules/exam/exam.html', null, '1', 'fa fa-file-code-o', '1');
 INSERT INTO `sys_menu` VALUES ('113', '112', '查看', null, 'exam:exam:list,exam:exam:info', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('114', '112', '新增', null, 'exam:exam:save', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('115', '112', '修改', null, 'exam:exam:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('114', '112', '新增', null, 'exam:exam:save,grade:grade:select,course:course:select', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('115', '112', '修改', null, 'exam:exam:update,grade:grade:select,course:course:select', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('116', '112', '删除', null, 'exam:exam:delete', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('117', '138', '题库管理', 'modules/question/question.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('118', '117', '查看', null, 'question:question:list,question:question:info', '2', null, '6');
@@ -602,9 +610,6 @@ INSERT INTO `sys_menu` VALUES ('138', '132', '题库管理', null, null, '0', nu
 INSERT INTO `sys_menu` VALUES ('139', '132', '考试管理', null, null, '0', null, '0');
 INSERT INTO `sys_menu` VALUES ('140', '132', '成绩管理', null, null, '0', null, '0');
 INSERT INTO `sys_menu` VALUES ('141', '132', '自动组卷', null, null, '0', null, '0');
-INSERT INTO `sys_menu` VALUES ('142', '133', '教案上传', '/', null, '1', null, '0');
-INSERT INTO `sys_menu` VALUES ('143', '133', '教学计划', '/', null, '1', null, '0');
-INSERT INTO `sys_menu` VALUES ('144', '133', '科研成果', '/', null, '1', null, '0');
 INSERT INTO `sys_menu` VALUES ('145', '133', '教师互评', null, null, '0', null, '0');
 INSERT INTO `sys_menu` VALUES ('149', '133', '考试测评', null, null, '0', null, '0');
 INSERT INTO `sys_menu` VALUES ('152', '134', '课题体验', null, null, '0', null, '0');
@@ -709,6 +714,21 @@ INSERT INTO `sys_menu` VALUES ('258', '257', '查看', null, 'testplan:testplan:
 INSERT INTO `sys_menu` VALUES ('259', '257', '新增', null, 'testplan:testplan:save', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('260', '257', '修改', null, 'testplan:testplan:update', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('261', '257', '删除', null, 'testplan:testplan:delete', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('262', '133', '教案上传', 'modules/teachplan/teachplan.html', null, '1', 'fa fa-file-code-o', '6');
+INSERT INTO `sys_menu` VALUES ('263', '262', '查看', null, 'teachplan:teachplan:list,teachplan:teachplan:info', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('264', '262', '新增', null, 'teachplan:teachplan:save', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('265', '262', '修改', null, 'teachplan:teachplan:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('266', '262', '删除', null, 'teachplan:teachplan:delete', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('267', '133', '教学计划', 'modules/lessonplan/lessonplan.html', null, '1', 'fa fa-file-code-o', '6');
+INSERT INTO `sys_menu` VALUES ('268', '267', '查看', null, 'lessonplan:lessonplan:list,lessonplan:lessonplan:info', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('269', '267', '新增', null, 'lessonplan:lessonplan:save', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('270', '267', '修改', null, 'lessonplan:lessonplan:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('271', '267', '删除', null, 'lessonplan:lessonplan:delete', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('272', '133', '科研成果', 'modules/achievements/achievements.html', null, '1', 'fa fa-file-code-o', '6');
+INSERT INTO `sys_menu` VALUES ('273', '272', '查看', null, 'achievements:achievements:list,achievements:achievements:info', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('274', '272', '新增', null, 'achievements:achievements:save', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('275', '272', '修改', null, 'achievements:achievements:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('276', '272', '删除', null, 'achievements:achievements:delete', '2', null, '6');
 
 -- ----------------------------
 -- Table structure for sys_oss
@@ -789,7 +809,7 @@ CREATE TABLE `sys_user` (
 INSERT INTO `sys_user` VALUES ('1', 'admin', '9ec9750e709431dad22365cabc5c625482e574c74adaebba7dd02f1129e4ce1d', 'YzcmCZNvbXocrsz9dm8e', '2549928596@qq.com', '13612345678', '1', '1', '2016-11-11 11:11:11');
 INSERT INTO `sys_user` VALUES ('2', 'supe', 'b53e32e734fbf5c971fe8e56d794f4b09939d51b7f5527e369211a4dc9a34cba', 'GZkh1eDcxd4wkUgy71dA', '691386631@qq.com', '13645368414', '1', '1', '2018-03-18 12:57:48');
 INSERT INTO `sys_user` VALUES ('3', 'teacher', 'cfb6865ea3827238372df84404a24ab1c88d17f9d976ac41509ac13305f8577b', 'DwMwG0YOrYjZ2f3C3OFz', '2549928596@qq.com', '15856912345', '1', '1', '2018-03-18 14:39:22');
-INSERT INTO `sys_user` VALUES ('4', 'student', 'afd8a5b1c9b99c367de44307c90228014bbc1f5c792c3f80385fe322612f5fb0', 'FxmiopsCJ82OEBQhj3E9', '135467823@qq.com', '13645368415', '1', '1', '2018-03-18 14:39:56');
+INSERT INTO `sys_user` VALUES ('4', 'student', 'afd8a5b1c9b99c367de44307c90228014bbc1f5c792c3f80385fe322612f5fb0', 'FxmiopsCJ82OEBQhj3E9', '135467823@qq.com', '13645368415', '0', '1', '2018-03-18 14:39:56');
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -800,7 +820,7 @@ CREATE TABLE `sys_user_role` (
   `user_id` bigint(20) DEFAULT NULL COMMENT '用户ID',
   `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='用户与角色对应关系';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户与角色对应关系';
 
 -- ----------------------------
 -- Records of sys_user_role
@@ -808,7 +828,7 @@ CREATE TABLE `sys_user_role` (
 INSERT INTO `sys_user_role` VALUES ('1', '1', '1');
 INSERT INTO `sys_user_role` VALUES ('2', '2', '2');
 INSERT INTO `sys_user_role` VALUES ('3', '3', '3');
-INSERT INTO `sys_user_role` VALUES ('4', '4', '4');
+INSERT INTO `sys_user_role` VALUES ('5', '4', '4');
 
 -- ----------------------------
 -- Table structure for sys_user_token
@@ -826,7 +846,28 @@ CREATE TABLE `sys_user_token` (
 -- ----------------------------
 -- Records of sys_user_token
 -- ----------------------------
-INSERT INTO `sys_user_token` VALUES ('1', 'b85d03b5038fb6f34218297a1c3a4762', '2018-03-27 08:48:22', '2018-03-26 20:48:22');
+INSERT INTO `sys_user_token` VALUES ('1', '29c7642ce2f8cd747a915903d9f633f0', '2018-03-30 07:06:04', '2018-03-29 19:06:04');
+
+-- ----------------------------
+-- Table structure for tb_achievements
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_achievements`;
+CREATE TABLE `tb_achievements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `achievementsname` varchar(100) DEFAULT NULL COMMENT '科研名称',
+  `achievementsdesc` varchar(100) DEFAULT NULL COMMENT '科研简介',
+  `attachname` varchar(50) DEFAULT NULL COMMENT '附件名称',
+  `createuser` varchar(50) DEFAULT NULL COMMENT '创建人',
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`),
+  KEY `idx_id_index` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='科研成果表';
+
+-- ----------------------------
+-- Records of tb_achievements
+-- ----------------------------
+INSERT INTO `tb_achievements` VALUES ('1', '土木交流大会论文发表成功', '土木领域的一次大会', '201801231786454.pdf', '1', '2018-03-28 06:50:42', null);
 
 -- ----------------------------
 -- Table structure for tb_college
@@ -841,14 +882,15 @@ CREATE TABLE `tb_college` (
   `remark` varchar(100) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='学院信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='学院信息表';
 
 -- ----------------------------
 -- Records of tb_college
 -- ----------------------------
 INSERT INTO `tb_college` VALUES ('1', '01', '计算机学院', '2018-03-25 11:23:11', 'admin', '计算机');
 INSERT INTO `tb_college` VALUES ('2', '02', '土木工程学院', '2018-03-26 21:38:31', '1', null);
-INSERT INTO `tb_college` VALUES ('3', '03', '电气自动化工程学院', '2018-03-26 21:41:45', 'admin', null);
+INSERT INTO `tb_college` VALUES ('3', '03', '电气学院', '2018-03-26 21:41:45', 'admin', null);
+INSERT INTO `tb_college` VALUES ('4', '04', '汽修学院', '2018-03-29 20:50:50', 'admin', null);
 
 -- ----------------------------
 -- Table structure for tb_course
@@ -870,8 +912,8 @@ CREATE TABLE `tb_course` (
 -- ----------------------------
 -- Records of tb_course
 -- ----------------------------
-INSERT INTO `tb_course` VALUES ('1', '01', '计算机组成原理', '01', '01', '2018-03-25 12:23:12', 'admin', '计算机硬件');
-INSERT INTO `tb_course` VALUES ('2', '02', '离散数学', '01', '01', '2018-03-26 22:26:38', 'admin', null);
+INSERT INTO `tb_course` VALUES ('1', '01', '计算机组成原理', '02', '003', '2018-03-25 12:23:12', 'admin', '计算机硬件');
+INSERT INTO `tb_course` VALUES ('2', '02', '离散数学', '01', '002', '2018-03-26 22:26:38', 'admin', null);
 
 -- ----------------------------
 -- Table structure for tb_exam
@@ -890,12 +932,13 @@ CREATE TABLE `tb_exam` (
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`),
   KEY `idx_majornum_index` (`majornum`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='考试成绩信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='考试成绩信息表';
 
 -- ----------------------------
 -- Records of tb_exam
 -- ----------------------------
 INSERT INTO `tb_exam` VALUES ('1', '01', '01', '01', '01', '王瑶', '86', '2018-03-25 14:23:11', '1');
+INSERT INTO `tb_exam` VALUES ('2', '02', '003', '01', '02', '1001', '95', '2018-03-29 22:04:36', null);
 
 -- ----------------------------
 -- Table structure for tb_goods
@@ -935,8 +978,28 @@ CREATE TABLE `tb_grade` (
 -- ----------------------------
 -- Records of tb_grade
 -- ----------------------------
-INSERT INTO `tb_grade` VALUES ('1', '01', '计算机111', '01', '01', '2018-03-25 12:23:11', 'admin', '计算机1班');
-INSERT INTO `tb_grade` VALUES ('2', '02', '计算机112班', '01', '01', '2018-03-26 22:19:32', 'admin', null);
+INSERT INTO `tb_grade` VALUES ('1', '01', '计算机111', '02', '001', '2018-03-25 12:23:11', 'admin', '计算机1班');
+INSERT INTO `tb_grade` VALUES ('2', '02', '计算机112班', '02', '003', '2018-03-26 22:19:32', 'admin', null);
+
+-- ----------------------------
+-- Table structure for tb_lessonplan
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_lessonplan`;
+CREATE TABLE `tb_lessonplan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `lessonplanname` varchar(100) DEFAULT NULL COMMENT '计划名称',
+  `attachname` varchar(50) DEFAULT NULL COMMENT '附件名称',
+  `createuser` varchar(50) DEFAULT NULL COMMENT '创建人',
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`),
+  KEY `idx_id_index` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='教案信息表';
+
+-- ----------------------------
+-- Records of tb_lessonplan
+-- ----------------------------
+INSERT INTO `tb_lessonplan` VALUES ('1', '2018年英语教学计划', '201801.word', '1', '2018-03-28 06:44:11', null);
 
 -- ----------------------------
 -- Table structure for tb_major
@@ -958,8 +1021,8 @@ CREATE TABLE `tb_major` (
 -- Records of tb_major
 -- ----------------------------
 INSERT INTO `tb_major` VALUES ('1', '002', '网络工程', '01', '2018-03-25 12:34:12', 'admin', '计算机');
-INSERT INTO `tb_major` VALUES ('2', '001', '计算机科学与技术', '01', null, null, '计算机');
-INSERT INTO `tb_major` VALUES ('3', '003', '软件工程', '01', null, null, '计算机');
+INSERT INTO `tb_major` VALUES ('2', '001', '计算机科学与技术', '02', null, null, '计算机');
+INSERT INTO `tb_major` VALUES ('3', '003', '软件工程', '02', null, null, '计算机');
 
 -- ----------------------------
 -- Table structure for tb_question
@@ -1025,11 +1088,13 @@ CREATE TABLE `tb_students` (
   KEY `idx_collegenum_index` (`collegenum`),
   KEY `idx_majornum_index` (`majornum`),
   KEY `idx_gradenum_index` (`gradenum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='学生信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='学生信息表';
 
 -- ----------------------------
 -- Records of tb_students
 -- ----------------------------
+INSERT INTO `tb_students` VALUES ('1', '1001', '01', '01', '01', '张三', '01', '1');
+INSERT INTO `tb_students` VALUES ('2', '1002', '01', '01', '01', '李四', '01', '1');
 
 -- ----------------------------
 -- Table structure for tb_teacherass
@@ -1074,12 +1139,33 @@ CREATE TABLE `tb_teachers` (
   KEY `idx_collegenum_index` (`collegenum`),
   KEY `idx_majornum_index` (`majornum`),
   KEY `idx_gradenum_index` (`gradenum`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='教师信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='教师信息表';
 
 -- ----------------------------
 -- Records of tb_teachers
 -- ----------------------------
 INSERT INTO `tb_teachers` VALUES ('1', '1001', '1001', '1001', '1001', '张三', '1001', '1', '120', '3');
+INSERT INTO `tb_teachers` VALUES ('2', '1002', '01', '01', '01', '王大锤', '01', '03', '60', '2');
+
+-- ----------------------------
+-- Table structure for tb_teachplan
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_teachplan`;
+CREATE TABLE `tb_teachplan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `teachplanname` varchar(100) DEFAULT NULL COMMENT '教案名称',
+  `attachname` varchar(50) DEFAULT NULL COMMENT '附件名称',
+  `createuser` varchar(50) DEFAULT NULL COMMENT '创建人',
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`),
+  KEY `idx_id_index` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='教案信息表';
+
+-- ----------------------------
+-- Records of tb_teachplan
+-- ----------------------------
+INSERT INTO `tb_teachplan` VALUES ('1', '2018年上班学期教案', '201803280638.word', '1', '2018-03-28 06:38:32', null);
 
 -- ----------------------------
 -- Table structure for tb_testplan
@@ -1102,11 +1188,12 @@ CREATE TABLE `tb_testplan` (
   KEY `idx_college_index` (`collegenum`),
   KEY `idx_term_index` (`term`),
   KEY `idx_grade_index` (`gradenum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='考试计划信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='考试计划信息表';
 
 -- ----------------------------
 -- Records of tb_testplan
 -- ----------------------------
+INSERT INTO `tb_testplan` VALUES ('1', '1', '01', '01', '01', '01', '2018-03-28 12:30:30', '2018-03-28 14:30:30', '土木教学楼401左', null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_user
