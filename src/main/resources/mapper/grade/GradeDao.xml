@@ -15,5 +15,7 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
-
+    <select id="queryGradeList" resultType="io.renren.modules.grade.entity.GradeEntity">
+        select gradenum,gradename from tb_grade WHERE majornum = #{majornum} order by gradenum asc
+    </select>
 </mapper>

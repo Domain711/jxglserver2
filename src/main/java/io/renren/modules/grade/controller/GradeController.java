@@ -2,8 +2,11 @@ package io.renren.modules.grade.controller;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
+import io.renren.modules.college.entity.CollegeEntity;
+import io.renren.modules.major.entity.MajorEntity;
 import io.renren.modules.sys.controller.AbstractController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +47,15 @@ public class GradeController extends AbstractController{
         return R.ok().put("page", page);
     }
 
+    /**
+     * 根据专业获取班级
+     */
+    @RequestMapping("/select")
+    @RequiresPermissions("grade:grade:select")
+    public R select(@RequestParam Map<String, Object> params){
+        List<GradeEntity> gradeList = gradeService.queryGradeList(params);
+        return R.ok().put("gradeList", gradeList);
+    }
 
     /**
      * 信息

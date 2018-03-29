@@ -14,5 +14,7 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
-
+    <select id="queryMajorList" resultType="io.renren.modules.major.entity.MajorEntity">
+        select majornum,majorname from tb_major WHERE collegenum = #{collegenum} order by collegenum asc
+    </select>
 </mapper>

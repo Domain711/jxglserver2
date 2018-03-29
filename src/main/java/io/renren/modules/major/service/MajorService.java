@@ -20,6 +20,11 @@ public interface MajorService extends IService<MajorEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * 获取所有专业列表
+     * @param
+     */
+    List<MajorEntity> queryMajorList(Map<String,Object> param);
 
 }
 

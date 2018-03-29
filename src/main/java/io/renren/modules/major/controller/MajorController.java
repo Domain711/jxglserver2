@@ -58,7 +58,15 @@ public class MajorController extends AbstractController{
         return R.ok().put("major", major);
     }
 
-
+    /**
+     * 获取专业列表
+     */
+    @RequestMapping("/select")
+    @RequiresPermissions("major:major:select")
+    public R select(@RequestParam Map<String, Object> params){
+        List<MajorEntity> majorList = majorService.queryMajorList(params);
+        return R.ok().put("majorList", majorList);
+    }
 
     /**
      * 保存

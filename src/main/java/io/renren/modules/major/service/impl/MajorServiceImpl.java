@@ -31,5 +31,10 @@ public class MajorServiceImpl extends ServiceImpl<MajorDao, MajorEntity> impleme
         return new PageUtils(page);
     }
 
-
+    @Override
+    public List<MajorEntity> queryMajorList(Map<String, Object> param) {
+        String collegenum =(String)param.get("collegenum");
+        List<MajorEntity> majorList = baseMapper.queryMajorList(collegenum);
+        return majorList;
+    }
 }

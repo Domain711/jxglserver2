@@ -1,7 +1,10 @@
 package io.renren.modules.course.service.impl;
 
+import io.renren.modules.grade.entity.GradeEntity;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -28,4 +31,10 @@ public class CourseServiceImpl extends ServiceImpl<CourseDao, CourseEntity> impl
         return new PageUtils(page);
     }
 
+    @Override
+    public List<CourseEntity> queryCourseList(Map<String, Object> param) {
+            String majornum =(String)param.get("majornum");
+            List<CourseEntity> courseList = baseMapper.queryCourseList(majornum);
+            return courseList;
+    }
 }
