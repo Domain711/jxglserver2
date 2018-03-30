@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.Query;
+import io.renren.modules.course.entity.CourseEntity;
 import io.renren.modules.grade.dao.GradeDao;
 import io.renren.modules.grade.entity.GradeEntity;
 import io.renren.modules.grade.service.GradeService;
@@ -20,13 +21,8 @@ public class GradeServiceImpl extends ServiceImpl<GradeDao, GradeEntity> impleme
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        String gradename = (String)params.get("gradename");
-        Page<GradeEntity> page = this.selectPage(
-                new Query<GradeEntity>(params).getPage(),
-                new EntityWrapper<GradeEntity>().like(StringUtils.isNotBlank(gradename),"gradename",gradename)
-        );
-
-        return new PageUtils(page);
+        List<GradeEntity> list = baseMapper.queryGradeListWithPage(params);
+        return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
 
     @Override

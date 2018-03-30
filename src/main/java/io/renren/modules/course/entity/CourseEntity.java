@@ -34,10 +34,12 @@ public class CourseEntity implements Serializable {
 	 * 学院编号
 	 */
 	private String collegenum;
+	private String collegename;
 	/**
 	 * 专业编号
 	 */
 	private String majornum;
+	private String majorname;
 	/**
 	 * 创建时间
 	 */
@@ -146,5 +148,25 @@ public class CourseEntity implements Serializable {
 	 */
 	public String getRemark() {
 		return remark;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public String getCollegename() {
+		return collegename;
+	}
+
+	public void setCollegename(String collegename) {
+		this.collegename = collegename;
+	}
+
+	public String getMajorname() {
+		return majorname;
+	}
+
+	public void setMajorname(String majorname) {
+		this.majorname = majorname;
 	}
 }

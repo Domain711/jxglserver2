@@ -15,6 +15,15 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
+    <select id="queryGradeListWithPage" resultType="io.renren.modules.grade.entity.GradeEntity">
+        SELECT  a.id,a.gradenum,a.gradename,b.collegename,c.majorname,a.remark
+        from tb_grade a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
+        <if test="gradename!=null and gradename!='' ">
+            WHERE gradename like CONCAT('%', #{gradename}, '%')
+        </if>
+        ORDER by a.id
+    </select>
+
     <select id="queryGradeList" resultType="io.renren.modules.grade.entity.GradeEntity">
         select gradenum,gradename from tb_grade WHERE majornum = #{majornum} order by gradenum asc
     </select>

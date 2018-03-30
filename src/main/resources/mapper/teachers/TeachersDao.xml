@@ -17,5 +17,15 @@
         <result property="credit" column="credit"/>
     </resultMap>
 
+    <select id="queryTeacherListWithPage" resultType="io.renren.modules.teachers.entity.TeachersEntity">
+        SELECT  a.id,a.num,a.name,b.collegename,c.majorname,d.coursename,a.period,a.credit,e.gradename
+
+        from tb_teachers a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
+        LEFT JOIN tb_course d on a.coursenum = d.coursenum LEFT JOIN tb_grade e on a.gradenum = e.gradenum
+        <if test="name!=null and name!='' ">
+            WHERE a.name like CONCAT('%', #{name}, '%')
+        </if>
+        ORDER by a.id
+    </select>
 
 </mapper>

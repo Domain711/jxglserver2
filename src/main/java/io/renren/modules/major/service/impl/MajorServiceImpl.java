@@ -1,6 +1,7 @@
 package io.renren.modules.major.service.impl;
 
 import io.renren.modules.college.entity.CollegeEntity;
+import io.renren.modules.course.entity.CourseEntity;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +23,10 @@ public class MajorServiceImpl extends ServiceImpl<MajorDao, MajorEntity> impleme
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        String majorname = (String)params.get("majorname");
-        Page<MajorEntity> page = this.selectPage(
-                new Query<MajorEntity>(params).getPage(),
-                new EntityWrapper<MajorEntity>().like(StringUtils.isNotBlank(majorname),"majorname",majorname)
-        );
-
-        return new PageUtils(page);
+        List<MajorEntity> list = baseMapper.queryMajorListWithPage(params);
+        return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
+
 
     @Override
     public List<MajorEntity> queryMajorList(Map<String, Object> param) {

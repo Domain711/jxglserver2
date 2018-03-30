@@ -22,13 +22,8 @@ public class CourseServiceImpl extends ServiceImpl<CourseDao, CourseEntity> impl
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        String coursename = (String)params.get("coursename");
-        Page<CourseEntity> page = this.selectPage(
-                new Query<CourseEntity>(params).getPage(),
-                new EntityWrapper<CourseEntity>().like(StringUtils.isNotBlank(coursename),"coursename",coursename)
-        );
-
-        return new PageUtils(page);
+        List<CourseEntity> list = baseMapper.queryCourseListWithPage(params);
+        return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
 
     @Override

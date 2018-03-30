@@ -6,6 +6,7 @@ import io.renren.modules.grade.entity.GradeEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 课程信息表
@@ -16,6 +17,15 @@ import java.util.List;
  */
 @Mapper
 public interface CourseDao extends BaseMapper<CourseEntity> {
+
+
+    /**
+     * 分页查询
+     * @param param
+     * @return
+     */
+    List<CourseEntity> queryCourseListWithPage(Map<String,Object> param);
+
 
     /**
      * 根据专业查询课程

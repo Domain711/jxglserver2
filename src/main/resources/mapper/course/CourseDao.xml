@@ -15,6 +15,16 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
+
+    <select id="queryCourseListWithPage" resultType="io.renren.modules.course.entity.CourseEntity">
+        SELECT  a.id,a.coursenum,a.coursename,b.collegename,c.majorname,a.remark
+        from tb_course a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
+        <if test="coursename!=null and coursename!='' ">
+            WHERE coursename like CONCAT('%', #{coursename}, '%')
+        </if>
+        ORDER by a.id
+    </select>
+
     <select id="queryCourseList" resultType="io.renren.modules.course.entity.CourseEntity">
         select coursenum,coursename from tb_course WHERE majornum = #{majornum} order by coursenum asc
     </select>

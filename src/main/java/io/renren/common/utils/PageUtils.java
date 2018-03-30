@@ -59,7 +59,7 @@ public class PageUtils implements Serializable {
 	/**
 	 * 分页
 	 */
-	public PageUtils(Page<?> page) {
+	public 	PageUtils(Page<?> page) {
 		this.list = page.getRecords();
 		this.totalCount = page.getTotal();
 		this.pageSize = page.getSize();

@@ -34,6 +34,7 @@ public class MajorEntity implements Serializable {
 	 * 学院编号
 	 */
 	private String collegenum;
+	private String collegename;
 	/**
 	 * 创建时间
 	 */
@@ -130,5 +131,13 @@ public class MajorEntity implements Serializable {
 	 */
 	public String getRemark() {
 		return remark;
+	}
+
+	public String getCollegename() {
+		return collegename;
+	}
+
+	public void setCollegename(String collegename) {
+		this.collegename = collegename;
 	}
 }
