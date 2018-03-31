@@ -16,5 +16,17 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
+    <select id="queryQuestionListWithPage" resultType="io.renren.modules.question.entity.QuestionEntity">
+        SELECT  a.id,a.questionnum,a.questioncotent,b.collegename,c.majorname,e.gradename,d.coursename,f.questiontypename
+
+        from tb_question a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
+        LEFT JOIN tb_grade e on a.gradenum = e.gradenum LEFT  JOIN tb_course d on a.coursenum = d.coursenum
+        LEFT JOIN tb_questiontype f on a.questiontype = f.questiontype
+        <if test="questionnum!=null and questionnum!='' ">
+            WHERE a.questionnum like CONCAT('%', #{questionnum}, '%')
+        </if>
+        ORDER by a.id
+
+    </select>
 
 </mapper>

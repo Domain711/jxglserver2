@@ -30,14 +30,19 @@ public class StudentsEntity implements Serializable {
 	 * 学院编号
 	 */
 	private String collegenum;
+	private String collegename;
 	/**
 	 * 专业编号
 	 */
 	private String majornum;
+	private String majorname;
+
 	/**
 	 * 班级编号
 	 */
 	private String gradenum;
+	private String gradename;
+
 	/**
 	 * 姓名
 	 */
@@ -146,5 +151,29 @@ public class StudentsEntity implements Serializable {
 	 */
 	public String getTerm() {
 		return term;
+	}
+
+	public String getCollegename() {
+		return collegename;
+	}
+
+	public void setCollegename(String collegename) {
+		this.collegename = collegename;
+	}
+
+	public String getMajorname() {
+		return majorname;
+	}
+
+	public void setMajorname(String majorname) {
+		this.majorname = majorname;
+	}
+
+	public String getGradename() {
+		return gradename;
+	}
+
+	public void setGradename(String gradename) {
+		this.gradename = gradename;
 	}
 }

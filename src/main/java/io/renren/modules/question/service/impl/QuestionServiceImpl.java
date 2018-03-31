@@ -1,6 +1,9 @@
 package io.renren.modules.question.service.impl;
 
+import io.renren.modules.students.entity.StudentsEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -18,12 +21,8 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionDao, QuestionEntity
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        Page<QuestionEntity> page = this.selectPage(
-                new Query<QuestionEntity>(params).getPage(),
-                new EntityWrapper<QuestionEntity>()
-        );
-
-        return new PageUtils(page);
+        List<QuestionEntity> list = baseMapper.queryQuestionListWithPage(params);
+        return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
 
 }

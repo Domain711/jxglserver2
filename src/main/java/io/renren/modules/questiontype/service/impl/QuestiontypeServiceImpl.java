@@ -2,6 +2,8 @@ package io.renren.modules.questiontype.service.impl;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -19,13 +21,18 @@ public class QuestiontypeServiceImpl extends ServiceImpl<QuestiontypeDao, Questi
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        String questionname = (String)params.get("questionname");
+        String questiontypename = (String)params.get("questiontypename");
         Page<QuestiontypeEntity> page = this.selectPage(
                 new Query<QuestiontypeEntity>(params).getPage(),
-                new EntityWrapper<QuestiontypeEntity>().like(StringUtils.isNotBlank(questionname),"questionname",questionname)
+                new EntityWrapper<QuestiontypeEntity>().like(StringUtils.isNotBlank(questiontypename),"questiontypename",questiontypename)
         );
 
         return new PageUtils(page);
     }
 
+    @Override
+    public List<QuestiontypeEntity> queryuestiontypeList() {
+        List<QuestiontypeEntity> queryuestiontypeList = baseMapper.queryuestiontypeList();
+        return queryuestiontypeList;
+    }
 }

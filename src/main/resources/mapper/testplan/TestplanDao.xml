@@ -19,5 +19,16 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
+    <select id="queryTestplanListWithPage" resultType="io.renren.modules.testplan.entity.TestplanEntity">
+        SELECT  a.id,a.term,a.starttime,a.endtime,a.addr,b.collegename,c.majorname,e.gradename,d.coursename
+
+        from tb_testplan a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
+        LEFT JOIN tb_grade e on a.gradenum = e.gradenum LEFT  JOIN tb_course d on a.coursenum = d.coursenum
+        <if test="questionnum!=null and questionnum!='' ">
+            WHERE a.questionnum like CONCAT('%', #{questionnum}, '%')
+        </if>
+        ORDER by a.id
+
+    </select>
 
 </mapper>

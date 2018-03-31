@@ -2,8 +2,10 @@ package io.renren.modules.questiontype.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import io.renren.common.utils.PageUtils;
+import io.renren.modules.college.entity.CollegeEntity;
 import io.renren.modules.questiontype.entity.QuestiontypeEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,12 @@ import java.util.Map;
 public interface QuestiontypeService extends IService<QuestiontypeEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+
+    /**
+     * 获取所有题型信息
+     * @return
+     */
+    List<QuestiontypeEntity> queryuestiontypeList();
 }
 

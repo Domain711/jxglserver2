@@ -1,7 +1,10 @@
 package io.renren.modules.exam.service.impl;
 
+import io.renren.modules.course.entity.CourseEntity;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -19,13 +22,8 @@ public class ExamServiceImpl extends ServiceImpl<ExamDao, ExamEntity> implements
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        String studentnum = (String)params.get("studentnum");
-        Page<ExamEntity> page = this.selectPage(
-                new Query<ExamEntity>(params).getPage(),
-                new EntityWrapper<ExamEntity>().like(StringUtils.isNotBlank(studentnum),"studentnum",studentnum)
-        );
-
-        return new PageUtils(page);
+        List<ExamEntity> list = baseMapper.queryExamListWithPage(params);
+        return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
 
 }

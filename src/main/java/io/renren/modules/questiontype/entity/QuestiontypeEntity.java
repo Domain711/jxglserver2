@@ -29,7 +29,7 @@ public class QuestiontypeEntity implements Serializable {
 	/**
 	 * 题目类型名称
 	 */
-	private String questionname;
+	private String questiontypename;
 	/**
 	 * 备注
 	 */
@@ -59,18 +59,15 @@ public class QuestiontypeEntity implements Serializable {
 	public String getQuestiontype() {
 		return questiontype;
 	}
-	/**
-	 * 设置：题目类型名称
-	 */
-	public void setQuestionname(String questionname) {
-		this.questionname = questionname;
+
+	public String getQuestiontypename() {
+		return questiontypename;
 	}
-	/**
-	 * 获取：题目类型名称
-	 */
-	public String getQuestionname() {
-		return questionname;
+
+	public void setQuestiontypename(String questiontypename) {
+		this.questiontypename = questiontypename;
 	}
+
 	/**
 	 * 设置：备注
 	 */

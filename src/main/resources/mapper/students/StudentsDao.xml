@@ -15,5 +15,16 @@
         <result property="term" column="term"/>
     </resultMap>
 
+    <select id="queryStudentsListWithPage" resultType="io.renren.modules.students.entity.StudentsEntity">
+        SELECT  a.id,a.studentnum,a.name,b.collegename,c.majorname,e.gradename
+
+        from tb_students a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
+        LEFT JOIN tb_grade e on a.gradenum = e.gradenum
+        <if test="name!=null and name!='' ">
+            WHERE a.name like CONCAT('%', #{name}, '%')
+        </if>
+        ORDER by a.id
+
+    </select>
 
 </mapper>

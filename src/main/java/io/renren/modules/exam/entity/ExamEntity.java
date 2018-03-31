@@ -26,18 +26,24 @@ public class ExamEntity implements Serializable {
 	 * 学院编号
 	 */
 	private String collegenum;
+	private String collegename;
+
 	/**
 	 * 专业编号
 	 */
 	private String majornum;
+	private String majorname;
+
 	/**
 	 * 课程编号
 	 */
 	private String coursenum;
+	private String coursename;
 	/**
 	 * 班级编号
 	 */
 	private String gradenum;
+	private String gradename;
 	/**
 	 * 学生学号
 	 */
@@ -162,5 +168,37 @@ public class ExamEntity implements Serializable {
 	 */
 	public String getRemark() {
 		return remark;
+	}
+
+	public String getCollegename() {
+		return collegename;
+	}
+
+	public void setCollegename(String collegename) {
+		this.collegename = collegename;
+	}
+
+	public String getMajorname() {
+		return majorname;
+	}
+
+	public void setMajorname(String majorname) {
+		this.majorname = majorname;
+	}
+
+	public String getCoursename() {
+		return coursename;
+	}
+
+	public void setCoursename(String coursename) {
+		this.coursename = coursename;
+	}
+
+	public String getGradename() {
+		return gradename;
+	}
+
+	public void setGradename(String gradename) {
+		this.gradename = gradename;
 	}
 }

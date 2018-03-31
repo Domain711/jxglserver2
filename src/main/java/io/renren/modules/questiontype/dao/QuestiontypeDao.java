@@ -4,6 +4,8 @@ import io.renren.modules.questiontype.entity.QuestiontypeEntity;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 题目类型表
  * 
@@ -13,5 +15,10 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface QuestiontypeDao extends BaseMapper<QuestiontypeEntity> {
-	
+
+    /**
+     * 获取所有题型列表
+     * @return
+     */
+    List<QuestiontypeEntity> queryuestiontypeList();
 }

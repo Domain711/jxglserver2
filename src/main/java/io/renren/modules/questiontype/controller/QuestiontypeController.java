@@ -1,9 +1,11 @@
 package io.renren.modules.questiontype.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import io.renren.common.utils.Constant;
+import io.renren.modules.college.entity.CollegeEntity;
 import io.renren.modules.sys.controller.AbstractController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +46,16 @@ public class QuestiontypeController extends AbstractController {
         return R.ok().put("page", page);
     }
 
+
+    /**
+     * 获取题型列表
+     */
+    @RequestMapping("/select")
+    @RequiresPermissions("questiontype:questiontype:select")
+    public R select(@RequestParam Map<String, Object> params){
+        List<QuestiontypeEntity> questiontypeList = questiontypeService.queryuestiontypeList();
+        return R.ok().put("questiontypeList", questiontypeList);
+    }
 
     /**
      * 信息
