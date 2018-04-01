@@ -1,8 +1,15 @@
 package io.renren.modules.teacherass.controller;
 
 import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
+import io.renren.modules.app.entity.UserEntity;
+import io.renren.modules.sys.controller.AbstractController;
+import io.renren.modules.sys.entity.SysUserEntity;
+import io.renren.modules.sys.service.SysUserRoleService;
+import io.renren.modules.sys.service.SysUserService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,9 +34,11 @@ import io.renren.common.utils.R;
  */
 @RestController
 @RequestMapping("teacherass/teacherass")
-public class TeacherassController {
+public class TeacherassController extends AbstractController{
     @Autowired
     private TeacherassService teacherassService;
+    @Autowired
+    private SysUserRoleService roleService;
 
     /**
      * 列表
@@ -60,6 +69,10 @@ public class TeacherassController {
     @RequestMapping("/save")
     @RequiresPermissions("teacherass:teacherass:save")
     public R save(@RequestBody TeacherassEntity teacherass){
+            teacherass.setAssnum(getUserId());//评价工号/学号，当前登陆人的id
+            teacherass.setAsstime(new Date());//评价时间
+            List<Long> roleIdList = roleService.queryRoleIdList(getUserId());//获取登陆角色列表
+            teacherass.setAsstype(roleIdList != null && roleIdList.contains("3")? "3" : "4");//评价人类型
 			teacherassService.insert(teacherass);
 
         return R.ok();

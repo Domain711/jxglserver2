@@ -1,5 +1,6 @@
 package io.renren.modules.teacherass.service.impl;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
@@ -18,9 +19,10 @@ public class TeacherassServiceImpl extends ServiceImpl<TeacherassDao, Teacherass
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        String teachernum = (String)params.get("teachernum");
         Page<TeacherassEntity> page = this.selectPage(
                 new Query<TeacherassEntity>(params).getPage(),
-                new EntityWrapper<TeacherassEntity>()
+                new EntityWrapper<TeacherassEntity>().eq(StringUtils.isNotBlank(teachernum),"teachernum",teachernum)
         );
 
         return new PageUtils(page);

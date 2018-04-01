@@ -41,7 +41,7 @@ public class TeacherassEntity implements Serializable {
 	/**
 	 * 评价工号/学号
 	 */
-	private Integer assnum;
+	private Long assnum;
 	/**
 	 * 评价时间
 	 */
@@ -118,13 +118,13 @@ public class TeacherassEntity implements Serializable {
 	/**
 	 * 设置：评价工号/学号
 	 */
-	public void setAssnum(Integer assnum) {
+	public void setAssnum(Long assnum) {
 		this.assnum = assnum;
 	}
 	/**
 	 * 获取：评价工号/学号
 	 */
-	public Integer getAssnum() {
+	public Long getAssnum() {
 		return assnum;
 	}
 	/**
