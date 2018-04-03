@@ -97,6 +97,7 @@ public class CloudStorageConfig implements Serializable {
     @NotBlank(message="所属地区不能为空", groups = QcloudGroup.class)
     private String qcloudRegion;
 
+
     public Integer getType() {
         return type;
     }

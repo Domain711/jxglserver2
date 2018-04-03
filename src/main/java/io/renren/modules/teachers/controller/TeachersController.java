@@ -43,7 +43,8 @@ public class TeachersController extends AbstractController{
     @RequiresPermissions("teachers:teachers:list")
     public R list(@RequestParam Map<String, Object> params){
         List<Long> roleIdList = sysUserRoleService.queryRoleIdList(getUserId());//获取拥有的角色
-        params.put("roleIdList",roleIdList);
+        params.put("roleId",roleIdList.get(0));
+        params.put("userId",getUserId());
         PageUtils page = teachersService.queryPage(params);
 
 

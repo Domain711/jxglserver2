@@ -21,7 +21,11 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionDao, QuestionEntity
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+//        int pageSize = Integer.parseInt(String.valueOf(params.get("limit")));
+//        int page = Integer.parseInt(String.valueOf(params.get("page")));
         List<QuestionEntity> list = baseMapper.queryQuestionListWithPage(params);
+//        params.put("pageSize",pageSize);
+//        params.put("page",page==1 ? page : page * pageSize);
         return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
 

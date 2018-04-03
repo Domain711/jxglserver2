@@ -21,12 +21,23 @@
 
         from tb_question a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
         LEFT JOIN tb_grade e on a.gradenum = e.gradenum LEFT  JOIN tb_course d on a.coursenum = d.coursenum
-        LEFT JOIN tb_questiontype f on a.questiontype = f.questiontype
+        LEFT JOIN tb_questiontype f on a.questiontype = f.questiontype WHERE 1=1
         <if test="questionnum!=null and questionnum!='' ">
-            WHERE a.questionnum like CONCAT('%', #{questionnum}, '%')
+            AND a.questionnum like CONCAT('%', #{questionnum}, '%')
+        </if>
+        <if test="collegenum!=null and collegenum!='' ">
+            AND a.collegenum = #{collegenum}
+        </if>
+        <if test="majornum!=null and majornum!='' ">
+            AND a.majornum = #{majornum}
+        </if>
+        <if test="gradenum!=null and gradenum!='' ">
+            AND a.gradenum = #{gradenum}
+        </if>
+        <if test="coursenum!=null and coursenum!='' ">
+            AND a.coursenum = #{coursenum}
         </if>
         ORDER by a.id
-
     </select>
 
 </mapper>

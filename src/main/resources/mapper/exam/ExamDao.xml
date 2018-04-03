@@ -20,9 +20,21 @@
         SELECT  a.id,a.studentnum,a.score,a.createtime,a.remark,b.collegename,c.majorname,e.gradename,d.coursename
         from tb_exam a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
         LEFT JOIN tb_grade e on a.gradenum = e.gradenum
-        LEFT JOIN tb_course d on a.coursenum = d.coursenum
+        LEFT JOIN tb_course d on a.coursenum = d.coursenum WHERE 1=1
         <if test="studentnum!=null and studentnum!='' ">
-            WHERE a.studentnum like CONCAT('%', #{studentnum}, '%')
+            AND a.studentnum like CONCAT('%', #{studentnum}, '%')
+        </if>
+        <if test="collegenum!=null and collegenum!='' ">
+            AND a.collegenum = #{collegenum}
+        </if>
+        <if test="majornum!=null and majornum!='' ">
+            AND a.majornum = #{majornum}
+        </if>
+        <if test="gradenum!=null and gradenum!='' ">
+            AND a.gradenum = #{gradenum}
+        </if>
+        <if test="coursenum!=null and coursenum!='' ">
+            AND a.coursenum = #{coursenum}
         </if>
         ORDER by a.id
     </select>

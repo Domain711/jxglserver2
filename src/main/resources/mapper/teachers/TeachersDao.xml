@@ -21,9 +21,18 @@
         SELECT  a.id,a.num,a.name,b.collegename,c.majorname,d.coursename,a.period,a.credit,e.gradename
 
         from tb_teachers a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
-        LEFT JOIN tb_course d on a.coursenum = d.coursenum LEFT JOIN tb_grade e on a.gradenum = e.gradenum
+        LEFT JOIN tb_course d on a.coursenum = d.coursenum LEFT JOIN tb_grade e on a.gradenum = e.gradenum where 1=1
         <if test="name!=null and name!='' ">
-            WHERE a.name like CONCAT('%', #{name}, '%')
+            and a.name like CONCAT('%', #{name}, '%')
+        </if>
+        <if test="assType !=null and assType !=''">
+            <if test="assType==1">
+                and a.num  not in(SELECT teachernum FROM tb_teacherass WHERE asstype=#{roleId} and assnum=#{userId})
+            </if>
+            <if test="assType==2">
+                and a.num  in(SELECT teachernum FROM tb_teacherass WHERE asstype=#{roleId} and assnum=#{userId})
+            </if>
+
         </if>
         ORDER by a.id
     </select>
