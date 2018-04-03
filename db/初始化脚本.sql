@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-03-29 22:58:40
+Date: 2018-04-03 10:01:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -170,7 +170,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RenrenScheduler', 'DESKTOP-80Q30CP1522330988449', '1522335183408', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('RenrenScheduler', 'DESKTOP-80Q30CP1522719274043', '1522720903594', '15000');
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -345,8 +345,10 @@ CREATE TABLE `sys_captcha` (
 -- ----------------------------
 INSERT INTO `sys_captcha` VALUES ('3c683ebe-bd56-4602-81e8-a4dd37cf9dc2', 'c2ady', '2018-03-25 21:29:39');
 INSERT INTO `sys_captcha` VALUES ('4aca070b-148f-47e9-8e0d-1faa0a4343f8', '8afep', '2018-03-26 20:04:00');
+INSERT INTO `sys_captcha` VALUES ('7d6795b7-2b95-4894-83cd-6c5d24718ab0', 'mndnb', '2018-04-03 10:01:19');
 INSERT INTO `sys_captcha` VALUES ('8ec09b26-ce92-42fe-8477-d95c9dccd0c3', '7bb3f', '2018-03-26 20:54:53');
 INSERT INTO `sys_captcha` VALUES ('a6c43e7e-9c71-49bc-8f37-fe0dd5cb0b90', 'we36n', '2018-03-24 19:36:23');
+INSERT INTO `sys_captcha` VALUES ('a87d6a56-bde2-40c5-879a-994a0ea27a46', 'f4wyy', '2018-04-01 21:24:21');
 INSERT INTO `sys_captcha` VALUES ('b447f9d3-bb19-454a-88c4-c784cc5afc48', 'f7fc4', '2018-03-24 19:36:15');
 INSERT INTO `sys_captcha` VALUES ('e985bcee-fca1-48e2-80f7-d4704f4c9943', 'eyapc', '2018-03-18 22:38:45');
 INSERT INTO `sys_captcha` VALUES ('eeef4822-372c-4a93-899d-9fa951c7ce37', 'n37an', '2018-03-26 20:07:11');
@@ -385,7 +387,7 @@ CREATE TABLE `sys_log` (
   `ip` varchar(64) DEFAULT NULL COMMENT 'IP地址',
   `create_date` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COMMENT='系统日志';
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8 COMMENT='系统日志';
 
 -- ----------------------------
 -- Records of sys_log
@@ -507,6 +509,8 @@ INSERT INTO `sys_log` VALUES ('114', 'admin', '修改菜单', 'io.renren.modules
 INSERT INTO `sys_log` VALUES ('115', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":267,\"parentId\":133,\"name\":\"教学计划\",\"url\":\"modules/lessonplan/lessonplan.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '41', '0:0:0:0:0:0:0:1', '2018-03-28 06:16:00');
 INSERT INTO `sys_log` VALUES ('116', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":272,\"parentId\":133,\"name\":\"科研成果\",\"url\":\"modules/achievements/achievements.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '16', '0:0:0:0:0:0:0:1', '2018-03-28 06:16:27');
 INSERT INTO `sys_log` VALUES ('117', 'admin', '修改用户', 'io.renren.modules.sys.controller.SysUserController.update()', '{\"userId\":4,\"username\":\"student\",\"salt\":\"FxmiopsCJ82OEBQhj3E9\",\"email\":\"135467823@qq.com\",\"mobile\":\"13645368415\",\"status\":0,\"roleIdList\":[4],\"createUserId\":1}', '240', '0:0:0:0:0:0:0:1', '2018-03-29 22:25:21');
+INSERT INTO `sys_log` VALUES ('118', 'admin', '删除菜单', 'io.renren.modules.sys.controller.SysMenuController.delete()', '195', '60', '0:0:0:0:0:0:0:1', '2018-04-02 12:30:54');
+INSERT INTO `sys_log` VALUES ('119', 'admin', '修改菜单', 'io.renren.modules.sys.controller.SysMenuController.update()', '{\"menuId\":277,\"parentId\":141,\"name\":\"组卷策略\",\"url\":\"modules/tactics/tactics.html\",\"type\":1,\"icon\":\"fa fa-file-code-o\",\"orderNum\":6}', '27', '0:0:0:0:0:0:0:1', '2018-04-02 12:31:23');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -522,7 +526,7 @@ CREATE TABLE `sys_menu` (
   `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
   `order_num` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
+) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -560,7 +564,7 @@ INSERT INTO `sys_menu` VALUES ('72', '136', '教师管理', 'modules/teachers/te
 INSERT INTO `sys_menu` VALUES ('74', '72', '新增', null, 'teachers:teachers:save', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('75', '72', '修改', null, 'teachers:teachers:update', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('76', '72', '删除', null, 'teachers:teachers:delete', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('77', '72', '查询', null, 'teachers:teachers:list', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('77', '72', '查看', null, 'teachers:teachers:list,teachers:teachers:info', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('92', '132', '学院管理', 'modules/college/college.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('93', '92', '查看', null, 'college:college:list,college:college:info', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('94', '92', '新增', null, 'college:college:save', '2', null, '6');
@@ -588,8 +592,8 @@ INSERT INTO `sys_menu` VALUES ('115', '112', '修改', null, 'exam:exam:update,g
 INSERT INTO `sys_menu` VALUES ('116', '112', '删除', null, 'exam:exam:delete', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('117', '138', '题库管理', 'modules/question/question.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('118', '117', '查看', null, 'question:question:list,question:question:info', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('119', '117', '新增', null, 'question:question:save', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('120', '117', '修改', null, 'question:question:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('119', '117', '新增', null, 'question:question:save,questiontype:questiontype:select', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('120', '117', '修改', null, 'question:question:update,questiontype:questiontype:select', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('121', '117', '删除', null, 'question:question:delete', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('122', '138', '题目类型', 'modules/questiontype/questiontype.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('123', '122', '查看', null, 'questiontype:questiontype:list,questiontype:questiontype:info', '2', null, '6');
@@ -647,7 +651,6 @@ INSERT INTO `sys_menu` VALUES ('191', '190', '查看', null, 'question:question:
 INSERT INTO `sys_menu` VALUES ('192', '190', '新增', null, 'question:question:save', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('193', '190', '修改', null, 'question:question:update', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('194', '190', '删除', null, 'question:question:delete', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('195', '141', '组卷策略', '/', null, '1', null, '0');
 INSERT INTO `sys_menu` VALUES ('196', '136', '教学督导管理', '/', null, '1', null, '0');
 INSERT INTO `sys_menu` VALUES ('197', '154', '待评价教师', 'modules/teacherass/teacherass.html', null, '1', 'fa fa-file-code-o', '6');
 INSERT INTO `sys_menu` VALUES ('198', '197', '查看', null, 'teacherass:teacherass:list,teacherass:teacherass:info', '2', null, '6');
@@ -729,6 +732,11 @@ INSERT INTO `sys_menu` VALUES ('273', '272', '查看', null, 'achievements:achie
 INSERT INTO `sys_menu` VALUES ('274', '272', '新增', null, 'achievements:achievements:save', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('275', '272', '修改', null, 'achievements:achievements:update', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('276', '272', '删除', null, 'achievements:achievements:delete', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('277', '141', '组卷策略', 'modules/tactics/tactics.html', null, '1', 'fa fa-file-code-o', '6');
+INSERT INTO `sys_menu` VALUES ('278', '277', '查看', null, 'tactics:tactics:list,tactics:tactics:info', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('279', '277', '新增', null, 'tactics:tactics:save', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('280', '277', '修改', null, 'tactics:tactics:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('281', '277', '删除', null, 'tactics:tactics:delete', '2', null, '6');
 
 -- ----------------------------
 -- Table structure for sys_oss
@@ -846,7 +854,7 @@ CREATE TABLE `sys_user_token` (
 -- ----------------------------
 -- Records of sys_user_token
 -- ----------------------------
-INSERT INTO `sys_user_token` VALUES ('1', '29c7642ce2f8cd747a915903d9f633f0', '2018-03-30 07:06:04', '2018-03-29 19:06:04');
+INSERT INTO `sys_user_token` VALUES ('1', 'aea9418ecd93aee7ab818d3135cdc4d4', '2018-04-02 20:46:42', '2018-04-02 08:46:42');
 
 -- ----------------------------
 -- Table structure for tb_achievements
@@ -905,15 +913,18 @@ CREATE TABLE `tb_course` (
   `createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `createuser` varchar(50) DEFAULT NULL COMMENT '创建人',
   `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  `collegename` varchar(100) DEFAULT NULL,
+  `majorname` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_coursenum_index` (`coursenum`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='课程信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='课程信息表';
 
 -- ----------------------------
 -- Records of tb_course
 -- ----------------------------
-INSERT INTO `tb_course` VALUES ('1', '01', '计算机组成原理', '02', '003', '2018-03-25 12:23:12', 'admin', '计算机硬件');
-INSERT INTO `tb_course` VALUES ('2', '02', '离散数学', '01', '002', '2018-03-26 22:26:38', 'admin', null);
+INSERT INTO `tb_course` VALUES ('1', '01', '计算机组成原理', '02', '001', '2018-03-25 12:23:12', 'admin', '计算机硬件', null, null);
+INSERT INTO `tb_course` VALUES ('2', '02', '离散数学', '01', '002', '2018-03-26 22:26:38', 'admin', null, null, null);
+INSERT INTO `tb_course` VALUES ('3', '03', '计算机操作系统', '01', '002', '2018-04-02 10:45:55', 'admin', null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_exam
@@ -929,16 +940,19 @@ CREATE TABLE `tb_exam` (
   `score` varchar(8) DEFAULT '0' COMMENT '考试成绩',
   `createtime` datetime DEFAULT NULL COMMENT '录入时间',
   `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  `gradename` varchar(100) DEFAULT NULL,
+  `coursename` varchar(100) DEFAULT NULL,
+  `majorname` varchar(100) DEFAULT NULL,
+  `collegename` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`),
   KEY `idx_majornum_index` (`majornum`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='考试成绩信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='考试成绩信息表';
 
 -- ----------------------------
 -- Records of tb_exam
 -- ----------------------------
-INSERT INTO `tb_exam` VALUES ('1', '01', '01', '01', '01', '王瑶', '86', '2018-03-25 14:23:11', '1');
-INSERT INTO `tb_exam` VALUES ('2', '02', '003', '01', '02', '1001', '95', '2018-03-29 22:04:36', null);
+INSERT INTO `tb_exam` VALUES ('3', '02', '001', '01', '01', '1001', '99', '2018-04-01 07:06:49', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_goods
@@ -971,6 +985,8 @@ CREATE TABLE `tb_grade` (
   `createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `createuser` varchar(50) DEFAULT NULL COMMENT '创建人',
   `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  `collegename` varchar(100) DEFAULT NULL,
+  `majorname` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='班级信息表';
@@ -978,8 +994,8 @@ CREATE TABLE `tb_grade` (
 -- ----------------------------
 -- Records of tb_grade
 -- ----------------------------
-INSERT INTO `tb_grade` VALUES ('1', '01', '计算机111', '02', '001', '2018-03-25 12:23:11', 'admin', '计算机1班');
-INSERT INTO `tb_grade` VALUES ('2', '02', '计算机112班', '02', '003', '2018-03-26 22:19:32', 'admin', null);
+INSERT INTO `tb_grade` VALUES ('1', '01', '计算机111', '01', '002', '2018-03-25 12:23:11', 'admin', '计算机1班', null, null);
+INSERT INTO `tb_grade` VALUES ('2', '02', '计算机112班', '02', '003', '2018-03-26 22:19:32', 'admin', null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_lessonplan
@@ -1013,6 +1029,7 @@ CREATE TABLE `tb_major` (
   `createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `createuser` varchar(50) DEFAULT NULL COMMENT '创建人',
   `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  `collegename` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='专业信息表';
@@ -1020,9 +1037,9 @@ CREATE TABLE `tb_major` (
 -- ----------------------------
 -- Records of tb_major
 -- ----------------------------
-INSERT INTO `tb_major` VALUES ('1', '002', '网络工程', '01', '2018-03-25 12:34:12', 'admin', '计算机');
-INSERT INTO `tb_major` VALUES ('2', '001', '计算机科学与技术', '02', null, null, '计算机');
-INSERT INTO `tb_major` VALUES ('3', '003', '软件工程', '02', null, null, '计算机');
+INSERT INTO `tb_major` VALUES ('1', '002', '网络工程', '01', '2018-03-25 12:34:12', 'admin', '计算机', null);
+INSERT INTO `tb_major` VALUES ('2', '001', '计算机科学与技术', '02', null, null, '计算机', null);
+INSERT INTO `tb_major` VALUES ('3', '003', '软件工程', '02', null, null, '计算机', null);
 
 -- ----------------------------
 -- Table structure for tb_question
@@ -1037,16 +1054,31 @@ CREATE TABLE `tb_question` (
   `questionnum` varchar(8) DEFAULT NULL COMMENT '题目编号',
   `questiontype` varchar(8) DEFAULT NULL COMMENT '题目类型编号',
   `questioncotent` longtext COMMENT '题目内容',
-  `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  `remark` longtext COMMENT '备注',
+  `collegename` varchar(100) DEFAULT NULL,
+  `majorname` varchar(100) DEFAULT NULL,
+  `coursename` varchar(100) DEFAULT NULL,
+  `gradename` varchar(100) DEFAULT NULL,
+  `questiontypename` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`),
   KEY `idx_majornum_index` (`majornum`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='考试成绩信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='考试成绩信息表';
 
 -- ----------------------------
 -- Records of tb_question
 -- ----------------------------
-INSERT INTO `tb_question` VALUES ('1', '1', '1', '1', '1', '1', '1', '1+1=？', '计算题');
+INSERT INTO `tb_question` VALUES ('3', '01', '002', '03', '01', '01', '03', '（）1．并发性是指若干事件在同一时刻发生。', null, null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('4', '01', '002', '03', '01', '02', '03', '（）2、虚存容量的扩大是以牺牲CPU工作时间以及内、外存交换时间为代价的。', null, null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('5', '01', '002', '03', '01', '03', '03', '（）3．用户为每个自己的进程创建PCB，并控制进程的执行过程。', null, null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('6', '01', '002', '03', '01', '04', '03', '（）4．树型目录结构能够解决文件重名问题。 ', null, null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('7', '01', '002', '03', '01', '06', '03', '（）5．原语是一种不可分割的操作。', null, null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('8', '01', '002', '03', '01', '07', '02', '1．操作系统为用户提供三种类型的使用接口，它们是_____和_______和图形用户界面。', null, null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('9', '01', '002', '03', '01', '07', '02', '2．主存储器与外围设备之间的数据传送控制方式有程序直接控制、_______、_______和通道控制方式。', null, null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('10', '01', '002', '03', '01', '09', '04', '1．在单处理机环境下，进程间有哪几种通信方式，是如何实现的？', '1. 作业调度：从一批后备作业中选择一个或几个作业，给它们分配资源，建立进程，挂入就绪队列。执行完后，回收资源。 进程调度：从就绪进程队列中根据某个策略选取一个进程，使之占用CPU。 交换调度：按照给定的原则和策略，将外存交换区中的进程调入内存，把内存中的非执行进程交换到外存交换区中。', null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('11', '01', '002', '03', '01', '10', '04', '2.设备管理中的数据传送控制方式有哪几种？分别简述如何实现的。', '2. 程序直接控制：由用户进程来直接控制内存或CPU和外设间的信息传送。 中断方式：进程通过CPU发出指令启动外设，该进程阻塞。当输入完成时，I/O控制器通过中断请求线向CPU发出中断信号，CPU进行中断处理。 DMA方式：在外设和内存之间开辟直接的数据交换通路。 通道控制方式：CPU发出启动指令，指出通道相应的操作和I/O 设备，该指令就可启动通道并使该通道从内存中调出相应的通道指令执行。', null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('12', '01', '002', '03', '01', '11', '01', '1．（       ）不是基本的操作系统。        A、批处理操作系统       B、分时操作系统  C、实时操作系统         D、网络操作系统 ', 'D', null, null, null, null, null);
+INSERT INTO `tb_question` VALUES ('13', '01', '002', '03', '01', '12', '01', '2．（    ）不是分时系统的基本特征：        A、同时性       B、独立性  C、实时性       D、交互性 ', 'c', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_questiontype
@@ -1055,7 +1087,7 @@ DROP TABLE IF EXISTS `tb_questiontype`;
 CREATE TABLE `tb_questiontype` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
   `questiontype` varchar(8) DEFAULT NULL COMMENT '题目类型编号',
-  `questionname` varchar(50) DEFAULT NULL COMMENT '题目类型名称',
+  `questiontypename` varchar(50) DEFAULT NULL COMMENT '题目类型名称',
   `remark` varchar(100) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`),
   KEY `idx_questiontype_index` (`questiontype`)
@@ -1069,7 +1101,7 @@ INSERT INTO `tb_questiontype` VALUES ('2', '02', '填空题', '填空题');
 INSERT INTO `tb_questiontype` VALUES ('3', '03', '判断题', '判断题');
 INSERT INTO `tb_questiontype` VALUES ('4', '04', '简答', '简答');
 INSERT INTO `tb_questiontype` VALUES ('5', '05', '计算题', '计算题');
-INSERT INTO `tb_questiontype` VALUES ('6', '06', '证明题', '证明题');
+INSERT INTO `tb_questiontype` VALUES ('6', '06', '证明题', '证明题类型');
 
 -- ----------------------------
 -- Table structure for tb_students
@@ -1084,6 +1116,9 @@ CREATE TABLE `tb_students` (
   `name` varchar(10) DEFAULT NULL COMMENT '姓名',
   `type` varchar(4) DEFAULT NULL COMMENT '类型',
   `term` varchar(8) DEFAULT NULL COMMENT '学期',
+  `collegename` varchar(100) DEFAULT NULL,
+  `majorname` varchar(100) DEFAULT NULL,
+  `gradename` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`),
   KEY `idx_majornum_index` (`majornum`),
@@ -1093,8 +1128,31 @@ CREATE TABLE `tb_students` (
 -- ----------------------------
 -- Records of tb_students
 -- ----------------------------
-INSERT INTO `tb_students` VALUES ('1', '1001', '01', '01', '01', '张三', '01', '1');
-INSERT INTO `tb_students` VALUES ('2', '1002', '01', '01', '01', '李四', '01', '1');
+INSERT INTO `tb_students` VALUES ('1', '1001', '02', '001', '01', '张三', '01', '1', null, null, null);
+INSERT INTO `tb_students` VALUES ('2', '1002', '01', '003', '02', '李四', '01', '1', null, null, null);
+
+-- ----------------------------
+-- Table structure for tb_tactics
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_tactics`;
+CREATE TABLE `tb_tactics` (
+  `tacid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `tacname` varchar(200) DEFAULT NULL COMMENT '试卷名称',
+  `collegenum` varchar(20) DEFAULT NULL COMMENT '学院编号',
+  `collegename` varchar(200) DEFAULT NULL COMMENT '学院',
+  `majornum` varchar(20) DEFAULT NULL COMMENT '专业编号',
+  `majorname` varchar(100) DEFAULT NULL COMMENT '专业名称',
+  `coursenum` varchar(20) DEFAULT NULL COMMENT '课程编号',
+  `coursename` varchar(20) DEFAULT NULL COMMENT '课程名称',
+  `content` longtext COMMENT '试卷内容',
+  `createid` bigint(20) DEFAULT NULL COMMENT '创建人',
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`tacid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='组卷策略';
+
+-- ----------------------------
+-- Records of tb_tactics
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tb_teacherass
@@ -1106,19 +1164,23 @@ CREATE TABLE `tb_teacherass` (
   `asstype` char(8) DEFAULT NULL COMMENT '人员类型 学生、老师',
   `asslevel` varchar(20) DEFAULT NULL COMMENT '评价等级 优秀、良好、可接受',
   `assvalue` int(11) DEFAULT '0' COMMENT '评价分值',
-  `assnum` int(11) DEFAULT '0' COMMENT '评价工号/学号',
+  `assnum` mediumtext COMMENT '评价工号/学号',
   `asstime` datetime DEFAULT NULL COMMENT '评价时间',
   `term` varchar(10) DEFAULT NULL COMMENT '学期',
   `assremark` varchar(100) DEFAULT NULL COMMENT '评价备注',
   PRIMARY KEY (`id`),
   KEY `idx_asstype_index` (`asstype`),
   KEY `idx_asstime_index` (`asstime`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='教师评价信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='教师评价信息表';
 
 -- ----------------------------
 -- Records of tb_teacherass
 -- ----------------------------
-INSERT INTO `tb_teacherass` VALUES ('1', '2', '1', '1', '1', '1', '2017-08-12 12:12:12', '1', '不接受');
+INSERT INTO `tb_teacherass` VALUES ('1', '1001', '1', '1', '1', '1', '2017-08-12 12:12:12', '2', '不接受');
+INSERT INTO `tb_teacherass` VALUES ('2', '1001', '3', '3', '1', '1', '2018-04-01 22:17:22', '1', '讲课不好');
+INSERT INTO `tb_teacherass` VALUES ('3', '1001', '3', '2', '1', '1', '2018-04-01 22:26:29', '1', '1');
+INSERT INTO `tb_teacherass` VALUES ('4', '1001', '3', '2', '1', '1', '2018-04-01 22:27:42', '1', '1');
+INSERT INTO `tb_teacherass` VALUES ('5', '1002', '3', '2', '0', '1', '2018-04-01 22:38:44', '1', '还行啊');
 
 -- ----------------------------
 -- Table structure for tb_teachers
@@ -1135,6 +1197,10 @@ CREATE TABLE `tb_teachers` (
   `type` varchar(4) DEFAULT NULL COMMENT '类型',
   `period` varchar(3) DEFAULT NULL COMMENT '学时',
   `credit` varchar(6) DEFAULT NULL COMMENT '学分',
+  `collegename` varchar(100) DEFAULT NULL,
+  `majorname` varchar(100) DEFAULT NULL,
+  `gradename` varchar(100) DEFAULT NULL,
+  `coursename` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_collegenum_index` (`collegenum`),
   KEY `idx_majornum_index` (`majornum`),
@@ -1144,8 +1210,8 @@ CREATE TABLE `tb_teachers` (
 -- ----------------------------
 -- Records of tb_teachers
 -- ----------------------------
-INSERT INTO `tb_teachers` VALUES ('1', '1001', '1001', '1001', '1001', '张三', '1001', '1', '120', '3');
-INSERT INTO `tb_teachers` VALUES ('2', '1002', '01', '01', '01', '王大锤', '01', '03', '60', '2');
+INSERT INTO `tb_teachers` VALUES ('1', '1001', '01', '002', '01', '张三', '02', '1', '120', '3', null, null, null, null);
+INSERT INTO `tb_teachers` VALUES ('2', '1002', '01', '01', '01', '王大锤', '01', '03', '60', '2', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_teachplan
@@ -1184,6 +1250,10 @@ CREATE TABLE `tb_testplan` (
   `createtime` datetime DEFAULT NULL COMMENT '计划创建时间',
   `createuser` varchar(50) DEFAULT NULL COMMENT '计划创建人',
   `remark` varchar(100) DEFAULT NULL COMMENT '计划备注',
+  `collegename` varchar(100) DEFAULT NULL,
+  `majorname` varchar(100) DEFAULT NULL,
+  `gradename` varchar(100) DEFAULT NULL,
+  `coursename` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_college_index` (`collegenum`),
   KEY `idx_term_index` (`term`),
@@ -1193,7 +1263,7 @@ CREATE TABLE `tb_testplan` (
 -- ----------------------------
 -- Records of tb_testplan
 -- ----------------------------
-INSERT INTO `tb_testplan` VALUES ('1', '1', '01', '01', '01', '01', '2018-03-28 12:30:30', '2018-03-28 14:30:30', '土木教学楼401左', null, null, null);
+INSERT INTO `tb_testplan` VALUES ('1', '2', '02', '001', '01', '01', '2018-03-28 12:30:30', '2018-03-28 14:30:30', '土木教学楼401左', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_user
