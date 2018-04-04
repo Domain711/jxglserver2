@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-04-03 10:01:47
+Date: 2018-04-04 23:19:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -170,7 +170,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RenrenScheduler', 'DESKTOP-80Q30CP1522719274043', '1522720903594', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('RenrenScheduler', 'DESKTOP-80Q30CP1522854846591', '1522855185548', '15000');
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -343,10 +343,14 @@ CREATE TABLE `sys_captcha` (
 -- ----------------------------
 -- Records of sys_captcha
 -- ----------------------------
+INSERT INTO `sys_captcha` VALUES ('18036528-338b-4171-8ea6-0eef593cf54c', '2py6y', '2018-04-03 10:08:55');
+INSERT INTO `sys_captcha` VALUES ('33c45699-4371-4e6f-84e5-ff17e487dbe8', '53enp', '2018-04-03 10:08:55');
 INSERT INTO `sys_captcha` VALUES ('3c683ebe-bd56-4602-81e8-a4dd37cf9dc2', 'c2ady', '2018-03-25 21:29:39');
 INSERT INTO `sys_captcha` VALUES ('4aca070b-148f-47e9-8e0d-1faa0a4343f8', '8afep', '2018-03-26 20:04:00');
+INSERT INTO `sys_captcha` VALUES ('5ef76677-1c11-4c14-8654-bee63711c1ef', '4agy5', '2018-04-03 10:08:54');
 INSERT INTO `sys_captcha` VALUES ('7d6795b7-2b95-4894-83cd-6c5d24718ab0', 'mndnb', '2018-04-03 10:01:19');
 INSERT INTO `sys_captcha` VALUES ('8ec09b26-ce92-42fe-8477-d95c9dccd0c3', '7bb3f', '2018-03-26 20:54:53');
+INSERT INTO `sys_captcha` VALUES ('a34c1167-ad5a-4058-8290-a693d69f273e', '6yb7d', '2018-04-03 10:08:55');
 INSERT INTO `sys_captcha` VALUES ('a6c43e7e-9c71-49bc-8f37-fe0dd5cb0b90', 'we36n', '2018-03-24 19:36:23');
 INSERT INTO `sys_captcha` VALUES ('a87d6a56-bde2-40c5-879a-994a0ea27a46', 'f4wyy', '2018-04-01 21:24:21');
 INSERT INTO `sys_captcha` VALUES ('b447f9d3-bb19-454a-88c4-c784cc5afc48', 'f7fc4', '2018-03-24 19:36:15');
@@ -526,7 +530,7 @@ CREATE TABLE `sys_menu` (
   `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
   `order_num` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8 COMMENT='菜单管理';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -732,11 +736,11 @@ INSERT INTO `sys_menu` VALUES ('273', '272', '查看', null, 'achievements:achie
 INSERT INTO `sys_menu` VALUES ('274', '272', '新增', null, 'achievements:achievements:save', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('275', '272', '修改', null, 'achievements:achievements:update', '2', null, '6');
 INSERT INTO `sys_menu` VALUES ('276', '272', '删除', null, 'achievements:achievements:delete', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('277', '141', '组卷策略', 'modules/tactics/tactics.html', null, '1', 'fa fa-file-code-o', '6');
-INSERT INTO `sys_menu` VALUES ('278', '277', '查看', null, 'tactics:tactics:list,tactics:tactics:info', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('279', '277', '新增', null, 'tactics:tactics:save', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('280', '277', '修改', null, 'tactics:tactics:update', '2', null, '6');
-INSERT INTO `sys_menu` VALUES ('281', '277', '删除', null, 'tactics:tactics:delete', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('282', '1', '组卷策略', 'modules/tactics/tactics.html', null, '1', 'fa fa-file-code-o', '6');
+INSERT INTO `sys_menu` VALUES ('283', '282', '查看', null, 'tactics:tactics:list,tactics:tactics:info', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('284', '282', '新增', null, 'tactics:tactics:save', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('285', '282', '修改', null, 'tactics:tactics:update', '2', null, '6');
+INSERT INTO `sys_menu` VALUES ('286', '282', '删除', null, 'tactics:tactics:delete', '2', null, '6');
 
 -- ----------------------------
 -- Table structure for sys_oss
@@ -854,7 +858,7 @@ CREATE TABLE `sys_user_token` (
 -- ----------------------------
 -- Records of sys_user_token
 -- ----------------------------
-INSERT INTO `sys_user_token` VALUES ('1', 'aea9418ecd93aee7ab818d3135cdc4d4', '2018-04-02 20:46:42', '2018-04-02 08:46:42');
+INSERT INTO `sys_user_token` VALUES ('1', 'be05c21f6e85e99433ab997d3b314638', '2018-04-05 08:38:35', '2018-04-04 20:38:35');
 
 -- ----------------------------
 -- Table structure for tb_achievements
@@ -1147,12 +1151,15 @@ CREATE TABLE `tb_tactics` (
   `content` longtext COMMENT '试卷内容',
   `createid` bigint(20) DEFAULT NULL COMMENT '创建人',
   `createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `qtype` varchar(100) DEFAULT NULL COMMENT '题型',
+  `weight` varchar(20) DEFAULT NULL COMMENT '权重',
   PRIMARY KEY (`tacid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='组卷策略';
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='组卷策略';
 
 -- ----------------------------
 -- Records of tb_tactics
 -- ----------------------------
+INSERT INTO `tb_tactics` VALUES ('19', '2018040423074703', '01', null, '002', null, '03', null, '{\"01\":[{\"questioncotent\":\"1．（       ）不是基本的操作系统。        A、批处理操作系统       B、分时操作系统  C、实时操作系统         D、网络操作系统 \"},{\"questioncotent\":\"2．（    ）不是分时系统的基本特征：        A、同时性       B、独立性  C、实时性       D、交互性 \"}],\"02\":[{\"questioncotent\":\"1．操作系统为用户提供三种类型的使用接口，它们是_____和_______和图形用户界面。\"},{\"questioncotent\":\"2．主存储器与外围设备之间的数据传送控制方式有程序直接控制、_______、_______和通道控制方式。\"}],\"03\":[{\"questioncotent\":\"（）1．并发性是指若干事件在同一时刻发生。\"},{\"questioncotent\":\"（）2、虚存容量的扩大是以牺牲CPU工作时间以及内、外存交换时间为代价的。\"},{\"questioncotent\":\"（）3．用户为每个自己的进程创建PCB，并控制进程的执行过程。\"},{\"questioncotent\":\"（）4．树型目录结构能够解决文件重名问题。 \"},{\"questioncotent\":\"（）5．原语是一种不可分割的操作。\"}]}', '1', '2018-04-04 23:07:47', '01,02,03', '1');
 
 -- ----------------------------
 -- Table structure for tb_teacherass

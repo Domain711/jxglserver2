@@ -1,82 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae038010-4b2f-41b4-8631-970da8da620d" name="Default" comment="添加教师、学生、成绩、考试计划">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+    <list default="true" id="ae038010-4b2f-41b4-8631-970da8da620d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/common/utils/DateUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/common/utils/DateUtils.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/question/dao/QuestionDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/question/dao/QuestionDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/question/service/QuestionService.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/question/service/QuestionService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/question/service/impl/QuestionServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/question/service/impl/QuestionServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/controller/TacticsController.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/controller/TacticsController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/dao/TacticsDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/dao/TacticsDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/entity/TacticsEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/entity/TacticsEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/service/TacticsService.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/service/TacticsService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/service/impl/TacticsServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/renren/modules/tactics/service/impl/TacticsServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminlte/js/modules/tactics/tactics.js" afterPath="$PROJECT_DIR$/src/main/resources/adminlte/js/modules/tactics/tactics.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminlte/modules/tactics/tactics.html" afterPath="$PROJECT_DIR$/src/main/resources/adminlte/modules/tactics/tactics.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/elementui/src/views/tactics/add-or-update.vue" afterPath="$PROJECT_DIR$/src/main/resources/elementui/src/views/tactics/add-or-update.vue" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/elementui/src/views/tactics/index.vue" afterPath="$PROJECT_DIR$/src/main/resources/elementui/src/views/tactics/index.vue" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/question/QuestionDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/question/QuestionDao.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/tactics/TacticsDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/tactics/TacticsDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/common/utils/DateUtils.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/common/utils/DateUtils.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/college/controller/CollegeController.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/college/controller/CollegeController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/college/dao/CollegeDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/college/dao/CollegeDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/college/service/CollegeService.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/college/service/CollegeService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/college/service/impl/CollegeServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/college/service/impl/CollegeServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/course/controller/CourseController.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/course/controller/CourseController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/course/dao/CourseDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/course/dao/CourseDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/course/entity/CourseEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/course/entity/CourseEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/course/service/CourseService.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/course/service/CourseService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/course/service/impl/CourseServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/course/service/impl/CourseServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/exam/dao/ExamDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/exam/dao/ExamDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/exam/entity/ExamEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/exam/entity/ExamEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/exam/service/impl/ExamServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/exam/service/impl/ExamServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/controller/GradeController.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/controller/GradeController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/dao/GradeDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/dao/GradeDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/entity/GradeEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/entity/GradeEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/service/GradeService.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/service/GradeService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/service/impl/GradeServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/grade/service/impl/GradeServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/major/controller/MajorController.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/major/controller/MajorController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/major/dao/MajorDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/major/dao/MajorDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/major/entity/MajorEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/major/entity/MajorEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/major/service/MajorService.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/major/service/MajorService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/major/service/impl/MajorServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/major/service/impl/MajorServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/oss/cloud/CloudStorageConfig.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/oss/cloud/CloudStorageConfig.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/question/dao/QuestionDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/question/dao/QuestionDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/question/entity/QuestionEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/question/entity/QuestionEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/question/service/QuestionService.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/question/service/QuestionService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/question/service/impl/QuestionServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/question/service/impl/QuestionServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/controller/QuestiontypeController.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/controller/QuestiontypeController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/dao/QuestiontypeDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/dao/QuestiontypeDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/entity/QuestiontypeEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/entity/QuestiontypeEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/service/QuestiontypeService.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/service/QuestiontypeService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/service/impl/QuestiontypeServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/questiontype/service/impl/QuestiontypeServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/students/dao/StudentsDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/students/dao/StudentsDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/students/entity/StudentsEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/students/entity/StudentsEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/students/service/impl/StudentsServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/students/service/impl/StudentsServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/sys/service/impl/SysMenuServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/sys/service/impl/SysMenuServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/teacherass/controller/TeacherassController.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/teacherass/controller/TeacherassController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/teacherass/entity/TeacherassEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/teacherass/entity/TeacherassEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/teacherass/service/impl/TeacherassServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/teacherass/service/impl/TeacherassServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/controller/TeachersController.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/controller/TeachersController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/dao/TeachersDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/dao/TeachersDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/entity/TeachersEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/entity/TeachersEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/service/impl/TeachersServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/teachers/service/impl/TeachersServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/testplan/dao/TestplanDao.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/testplan/dao/TestplanDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/testplan/entity/TestplanEntity.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/testplan/entity/TestplanEntity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/renren/modules/testplan/service/impl/TestplanServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/renren/modules/testplan/service/impl/TestplanServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/college/CollegeDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/college/CollegeDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/course/CourseDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/course/CourseDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/exam/ExamDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/exam/ExamDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/grade/GradeDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/grade/GradeDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/major/MajorDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/major/MajorDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/question/QuestionDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/question/QuestionDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/questiontype/QuestiontypeDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/questiontype/QuestiontypeDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/students/StudentsDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/students/StudentsDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/teachers/TeachersDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/teachers/TeachersDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/testplan/TestplanDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/testplan/TestplanDao.xml" />
+      <change beforePath="$PROJECT_DIR$/db/初始化脚本.sql" afterPath="$PROJECT_DIR$/db/初始化脚本.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,7 +29,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="TacticsDao.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TacticsDao.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/tactics/TacticsDao.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="625">
@@ -110,6 +37,16 @@
               <folding>
                 <marker date="1522854984529" expanded="true" signature="1181:1469" ph="SELECT a.id,... tb_tactics" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="初始化脚本.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/初始化脚本.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="950">
+              <caret line="929" column="30" lean-forward="false" selection-start-line="929" selection-start-column="30" selection-end-line="929" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -233,6 +170,11 @@
               <item name="renren-fast" type="b2602c69:ProjectViewProjectNode" />
               <item name="jxglserver2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="renren-fast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxglserver2" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -261,8 +203,8 @@
       <recent name="F:\ideaWorkSpace\jxglserver\src\main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\jxglspace\jxglserver2\src" />
       <recent name="F:\jxglspace\jxglserver2\db" />
+      <recent name="F:\jxglspace\jxglserver2\src" />
       <recent name="F:\jxglspace\jxglserver2" />
       <recent name="F:\ideaWorkSpace\jxglserver\src" />
       <recent name="F:\ideaWorkSpace\jxglserver" />
@@ -403,7 +345,7 @@
       <workItem from="1522585584349" duration="5571000" />
       <workItem from="1522629661324" duration="12821000" />
       <workItem from="1522753711798" duration="3327000" />
-      <workItem from="1522845054096" duration="9300000" />
+      <workItem from="1522845054096" duration="9467000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化脚本">
       <created>1522157645056</created>
@@ -482,11 +424,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522721359930</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="添加教师、学生、成绩、考试计划">
+      <created>1522855059956</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1522855059956</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130932000" />
+    <option name="totallyTimeSpent" value="131099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -578,12 +527,12 @@
     <MESSAGE value="专业模块添加学院下拉框功能" />
     <MESSAGE value="项目初始化脚本修改" />
     <MESSAGE value="添加专业、课程、专业、教师模块的分页查询" />
-    <MESSAGE value="添加教师、学生、成绩、考试计划" />
     <MESSAGE value="添加教师评价" />
     <MESSAGE value="添加题库，组卷策咯" />
     <MESSAGE value="更新初始化脚本" />
     <MESSAGE value="前台断网运行" />
-    <option name="LAST_COMMIT_MESSAGE" value="前台断网运行" />
+    <MESSAGE value="添加教师、学生、成绩、考试计划" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加教师、学生、成绩、考试计划" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/初始化脚本.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33444">
-          <caret line="929" column="30" lean-forward="false" selection-start-line="929" selection-start-column="30" selection-end-line="929" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/前台断网运行.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -990,6 +932,14 @@
           <folding>
             <marker date="1522854984529" expanded="true" signature="1181:1469" ph="SELECT a.id,... tb_tactics" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/初始化脚本.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="929" column="30" lean-forward="false" selection-start-line="929" selection-start-column="30" selection-end-line="929" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
