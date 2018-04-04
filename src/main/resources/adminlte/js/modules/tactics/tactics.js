@@ -13,7 +13,9 @@ $(function () {
 			{ label: '课程名称', name: 'coursename', index: 'coursename', width: 80 }, 			
 			{ label: '试卷内容', name: 'content', index: 'content', width: 80 }, 			
 			{ label: '创建人', name: 'createid', index: 'createid', width: 80 }, 			
-			{ label: '创建时间', name: 'createtime', index: 'createtime', width: 80 }			
+			{ label: '创建时间', name: 'createtime', index: 'createtime', width: 80 }, 			
+			{ label: '题型', name: 'qtype', index: 'qtype', width: 80 }, 			
+			{ label: '权重', name: 'weight', index: 'weight', width: 80 }			
         ],
 		viewrecords: true,
         height: 385,

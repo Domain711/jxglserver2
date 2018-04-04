@@ -15,4 +15,16 @@
     </resultMap>
 
 
+    <select id="queryMajorListWithPage" resultType="io.renren.modules.major.entity.MajorEntity">
+        SELECT  a.id,a.majornum,a.majorname,b.collegename,a.remark
+        from tb_major a LEFT JOIN tb_college b ON a.collegenum = b.collegenum
+        <if test="majorname!=null and majorname!='' ">
+            WHERE majorname like CONCAT('%', #{majorname}, '%')
+        </if>
+        ORDER by a.id
+    </select>
+
+    <select id="queryMajorList" resultType="io.renren.modules.major.entity.MajorEntity">
+        select majornum,majorname from tb_major WHERE collegenum = #{collegenum} order by collegenum asc
+    </select>
 </mapper>

@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.service.IService;
 import io.renren.common.utils.PageUtils;
 import io.renren.modules.tactics.entity.TacticsEntity;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,17 +11,10 @@ import java.util.Map;
  *
  * @author 
  * @email 
- * @date 2018-04-02 12:22:28
+ * @date 2018-04-04 21:11:37
  */
 public interface TacticsService extends IService<TacticsEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
-
-    /**
-     * 生成试卷
-     * @param params
-     * @return
-     */
-    List createPaper(Map<String, Object> params);
 }
 

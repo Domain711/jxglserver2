@@ -11,5 +11,7 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
-
+    <select id="queryuestiontypeList" resultType="io.renren.modules.questiontype.entity.QuestiontypeEntity">
+        select questiontype,questiontypename from tb_questiontype  order by questiontype asc
+    </select>
 </mapper>

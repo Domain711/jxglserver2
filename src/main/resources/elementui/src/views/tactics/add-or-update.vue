@@ -34,6 +34,12 @@
       <el-form-item label="创建时间" prop="createtime">
         <el-input v-model="dataForm.createtime" placeholder="创建时间"></el-input>
       </el-form-item>
+      <el-form-item label="题型" prop="qtype">
+        <el-input v-model="dataForm.qtype" placeholder="题型"></el-input>
+      </el-form-item>
+      <el-form-item label="权重" prop="weight">
+        <el-input v-model="dataForm.weight" placeholder="权重"></el-input>
+      </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
@@ -59,7 +65,9 @@
           coursename: '',
           content: '',
           createid: '',
-          createtime: ''
+          createtime: '',
+          qtype: '',
+          weight: ''
         },
         dataRule: {
           tacname: [
@@ -91,6 +99,12 @@
           ],
           createtime: [
             { required: true, message: '创建时间不能为空', trigger: 'blur' }
+          ],
+          qtype: [
+            { required: true, message: '题型不能为空', trigger: 'blur' }
+          ],
+          weight: [
+            { required: true, message: '权重不能为空', trigger: 'blur' }
           ]
         }
       }
@@ -114,6 +128,8 @@
                 this.dataForm.content = data.tactics.content
                 this.dataForm.createid = data.tactics.createid
                 this.dataForm.createtime = data.tactics.createtime
+                this.dataForm.qtype = data.tactics.qtype
+                this.dataForm.weight = data.tactics.weight
               }
             })
           }
@@ -134,7 +150,9 @@
               'coursename': this.dataForm.coursename,
               'content': this.dataForm.content,
               'createid': this.dataForm.createid,
-              'createtime': this.dataForm.createtime
+              'createtime': this.dataForm.createtime,
+              'qtype': this.dataForm.qtype,
+              'weight': this.dataForm.weight
             }
             var tick = !this.dataForm.tacid ? API.tactics.add(params) : API.tactics.update(params)
             tick.then(({data}) => {

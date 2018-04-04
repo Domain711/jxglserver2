@@ -24,4 +24,11 @@ public interface QuestionDao extends BaseMapper<QuestionEntity> {
      * @return
      */
     List<QuestionEntity> queryQuestionListWithPage(Map<String,Object> param);
+
+    /**
+     * 根据题型查询相关题目
+     * @param qtype
+     * @return
+     */
+    List<QuestionEntity> queryQuestionList(String qtype);
 }

@@ -1,5 +1,6 @@
 package io.renren.modules.tactics.service.impl;
 
+import io.renren.modules.teachers.entity.TeachersEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,19 +18,10 @@ import io.renren.modules.tactics.service.TacticsService;
 
 @Service("tacticsService")
 public class TacticsServiceImpl extends ServiceImpl<TacticsDao, TacticsEntity> implements TacticsService {
-
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        Page<TacticsEntity> page = this.selectPage(
-                new Query<TacticsEntity>(params).getPage(),
-                new EntityWrapper<TacticsEntity>()
-        );
-
-        return new PageUtils(page);
+        List<TacticsEntity> list = baseMapper.queryTacticListWithPage(params);
+        return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
 
-    @Override
-    public List createPaper(Map<String, Object> params) {
-        return null;
-    }
 }

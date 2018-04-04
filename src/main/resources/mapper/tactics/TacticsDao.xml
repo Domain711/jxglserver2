@@ -16,7 +16,16 @@
         <result property="content" column="content"/>
         <result property="createid" column="createid"/>
         <result property="createtime" column="createtime"/>
+        <result property="qtype" column="qtype"/>
+        <result property="weight" column="weight"/>
     </resultMap>
 
 
+    <select id="queryTacticListWithPage" resultType="io.renren.modules.tactics.entity.TacticsEntity">
+        SELECT  a.tacid,a.tacname,b.collegename,c.majorname,d.coursename
+
+        from tb_tactics a LEFT JOIN tb_college b ON a.collegenum = b.collegenum LEFT JOIN tb_major c on a.majornum = c.majornum
+        LEFT JOIN tb_course d on a.coursenum = d.coursenum  where 1=1
+        ORDER by a.tacid
+    </select>
 </mapper>

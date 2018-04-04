@@ -40,4 +40,8 @@
         ORDER by a.id
     </select>
 
+
+    <select id="queryQuestionList" resultType="io.renren.modules.question.entity.QuestionEntity">
+        select questioncotent from tb_question WHERE questiontype = #{qtype} order by questiontype asc
+    </select>
 </mapper>

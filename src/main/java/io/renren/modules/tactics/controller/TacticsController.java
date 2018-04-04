@@ -1,13 +1,16 @@
 package io.renren.modules.tactics.controller;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 
+import com.alibaba.druid.support.json.JSONUtils;
+import com.google.gson.Gson;
 import io.renren.common.utils.DateUtils;
+import io.renren.modules.question.entity.QuestionEntity;
+import io.renren.modules.question.service.QuestionService;
 import io.renren.modules.sys.controller.AbstractController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,13 +29,15 @@ import io.renren.common.utils.R;
  *
  * @author 
  * @email 
- * @date 2018-04-02 12:22:28
+ * @date 2018-04-04 21:11:37
  */
 @RestController
 @RequestMapping("tactics/tactics")
-public class TacticsController extends AbstractController {
+public class TacticsController extends AbstractController{
     @Autowired
     private TacticsService tacticsService;
+    @Autowired
+    private QuestionService questionService;
 
     /**
      * 列表
@@ -45,17 +50,6 @@ public class TacticsController extends AbstractController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 生成试卷
-     */
-    @RequestMapping("/paper")
-    @RequiresPermissions("tactics:tactics:paper")
-    public R paper(@RequestParam Map<String, Object> params){
-        PageUtils page = tacticsService.queryPage(params);
-
-        return R.ok().put("page", page);
-    }
 
     /**
      * 信息
@@ -74,13 +68,19 @@ public class TacticsController extends AbstractController {
     @RequestMapping("/save")
     @RequiresPermissions("tactics:tactics:save")
     public R save(@RequestBody TacticsEntity tactics){
-            tactics.setTacname(DateUtils.format(new Date(),DateUtils.DATE_TIME_PATTERN)+tactics.getCoursenum());//试卷名称
+            tactics.setQtype("01,02,03");
+            tactics.setTacname(DateUtils.format(new Date(),DateUtils.DATE_TIME_PATTERN_SSS)+tactics.getCoursenum());//试卷名称
             tactics.setCreateid(getUserId());
             tactics.setCreatetime(new Date());
-            //to-do 根据条件组装策生成试卷
-
-			tacticsService.insert(tactics);
-
+            //to-do
+        String[] qtype = tactics.getQtype().split(",");//获取题型
+        Map<String,List<QuestionEntity>> resMap = new HashMap<>();
+        for (String res : qtype){
+            List<QuestionEntity> list = questionService.queryQuestionList(res);
+            resMap.put(res,list);
+        }
+        tactics.setContent(new Gson().toJson(resMap));
+        tacticsService.insert(tactics);
         return R.ok();
     }
 

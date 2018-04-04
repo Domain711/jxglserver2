@@ -11,7 +11,7 @@ import java.util.Date;
  * 
  * @author 
  * @email 
- * @date 2018-04-02 12:22:28
+ * @date 2018-04-04 21:11:37
  */
 @TableName("tb_tactics")
 public class TacticsEntity implements Serializable {
@@ -62,6 +62,14 @@ public class TacticsEntity implements Serializable {
 	 * 创建时间
 	 */
 	private Date createtime;
+	/**
+	 * 题型
+	 */
+	private String qtype;
+	/**
+	 * 权重
+	 */
+	private String weight;
 
 	/**
 	 * 设置：
@@ -194,5 +202,29 @@ public class TacticsEntity implements Serializable {
 	 */
 	public Date getCreatetime() {
 		return createtime;
+	}
+	/**
+	 * 设置：题型
+	 */
+	public void setQtype(String qtype) {
+		this.qtype = qtype;
+	}
+	/**
+	 * 获取：题型
+	 */
+	public String getQtype() {
+		return qtype;
+	}
+	/**
+	 * 设置：权重
+	 */
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+	/**
+	 * 获取：权重
+	 */
+	public String getWeight() {
+		return weight;
 	}
 }

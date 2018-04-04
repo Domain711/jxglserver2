@@ -29,4 +29,9 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionDao, QuestionEntity
         return new PageUtils(list,list.size(),Integer.parseInt(String.valueOf(params.get("limit"))),Integer.parseInt(String.valueOf(params.get("page"))));
     }
 
+    @Override
+    public List<QuestionEntity> queryQuestionList(String qtype) {
+        List<QuestionEntity> list = baseMapper.queryQuestionList(qtype);
+        return list;
+    }
 }

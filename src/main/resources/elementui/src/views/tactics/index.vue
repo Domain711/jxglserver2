@@ -89,6 +89,18 @@
         label="创建时间">
       </el-table-column>
       <el-table-column
+        prop="qtype"
+        header-align="center"
+        align="center"
+        label="题型">
+      </el-table-column>
+      <el-table-column
+        prop="weight"
+        header-align="center"
+        align="center"
+        label="权重">
+      </el-table-column>
+      <el-table-column
         fixed="right"
         header-align="center"
         align="center"

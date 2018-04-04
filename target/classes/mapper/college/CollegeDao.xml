@@ -13,5 +13,7 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
-
+    <select id="queryCollegeList" resultType="io.renren.modules.college.entity.CollegeEntity">
+        select collegenum,collegename from tb_college  order by collegenum asc
+    </select>
 </mapper>
