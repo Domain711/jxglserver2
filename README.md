@@ -61,6 +61,7 @@ renren-fast
 
 
  **本地部署**
+ **本地部署**
 - 通过git下载源码
 - 创建数据库renren_fast，数据库编码为UTF-8
 - 执行db/mysql.sql文件，初始化数据
@@ -70,5 +71,9 @@ renren-fast
 - 账号密码：admin/admin
 - Swagger路径：http://localhost:8080/renren-fast/swagger/index.html
 
+
+**注意** 
+先执行初始化脚本
 <br> 
+    
 
