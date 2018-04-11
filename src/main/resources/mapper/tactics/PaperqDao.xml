@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.tactics.dao.PaperqDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.tactics.entity.PaperqEntity" id="paperqMap">
+        <result property="id" column="id"/>
+        <result property="num" column="num"/>
+        <result property="papertype" column="papertype"/>
+        <result property="content" column="content"/>
+    </resultMap>
+
+    <select id="queryPaperqList" resultType="io.renren.modules.tactics.entity.PaperqEntity">
+        select content from tb_paperq WHERE papertype = #{majornum} order by id asc
+    </select>
+</mapper>

@@ -26,6 +26,10 @@
     </select>
 
     <select id="queryCourseList" resultType="io.renren.modules.course.entity.CourseEntity">
-        select coursenum,coursename from tb_course WHERE majornum = #{majornum} order by coursenum asc
+        select coursenum,coursename from tb_course WHERE 1=1
+        <if test="majornum!=null and majornum!='' ">
+          and majornum = #{majornum}
+        </if>
+        order by coursenum asc
     </select>
 </mapper>

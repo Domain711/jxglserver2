@@ -8,6 +8,10 @@ import io.renren.common.utils.DateUtils;
 import io.renren.modules.question.entity.QuestionEntity;
 import io.renren.modules.question.service.QuestionService;
 import io.renren.modules.sys.controller.AbstractController;
+import io.renren.modules.tactics.entity.PaperEntity;
+import io.renren.modules.tactics.entity.PaperqEntity;
+import io.renren.modules.tactics.service.PaperService;
+import io.renren.modules.tactics.service.PaperqService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.GsonBuilderUtils;
@@ -38,6 +42,10 @@ public class TacticsController extends AbstractController{
     private TacticsService tacticsService;
     @Autowired
     private QuestionService questionService;
+    @Autowired
+    private PaperService paperService;
+    @Autowired
+    private PaperqService paperqService;
 
     /**
      * 列表
@@ -81,6 +89,19 @@ public class TacticsController extends AbstractController{
         }
         tactics.setContent(new Gson().toJson(resMap));
         tacticsService.insert(tactics);
+
+        PaperEntity paper = new PaperEntity();
+        paper.setTacid(tactics.getTacid());
+        paper.setTacname(tactics.getTacname());
+
+        Map<String,Object> param = new HashMap<>();
+        param.put("majornum",tactics.getCoursenum());
+        List<PaperqEntity> paperqList = paperqService.queryPaperqList(param);
+        int index=(int)(Math.random()*paperqList.size());
+        PaperqEntity paperqEntity = paperqList.get(index);
+        paper.setContent(paperqEntity.getContent());//试卷内容，随机一个id,匹配（根据题型匹配）
+        paperService.insert(paper);
+        //生成试卷
         return R.ok();
     }
 
